@@ -24,8 +24,11 @@ export default function ProjectsSection() {
     <section id="projects" className="py-32 px-6 md:px-12">
       <div className="max-w-7xl mx-auto">
         <div className="mb-20">
-          <p className="text-sm text-neutral-500 mb-6 tracking-wide font-light">PROJECTS</p>
-          <h2 className="text-5xl md:text-7xl font-semibold tracking-tight bg-gradient-to-r from-white via-neutral-200 to-neutral-500 bg-clip-text text-transparent">
+          <div className="relative inline-block mb-6">
+            <div className="absolute inset-0 bg-white/[0.02] backdrop-blur-xl border border-white/[0.05] rounded-lg" />
+            <p className="relative text-sm text-neutral-500 tracking-wide font-light px-3 py-1">PROJECTS</p>
+          </div>
+          <h2 className="text-5xl md:text-7xl font-semibold tracking-tight bg-gradient-to-r from-white via-neutral-200 to-neutral-500 bg-clip-text text-transparent animate-gradient-x">
             Featured Work
           </h2>
         </div>

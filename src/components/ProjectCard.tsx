@@ -56,7 +56,7 @@ export default function ProjectCard({
 
         {/* Content section */}
         <div className="p-6 space-y-3">
-          <h3 className="text-2xl font-semibold text-white group-hover:text-neutral-200 transition-colors">
+          <h3 className="text-2xl font-semibold text-white group-hover:bg-gradient-to-r group-hover:from-blue-400 group-hover:via-purple-400 group-hover:to-pink-400 group-hover:bg-clip-text group-hover:text-transparent transition-all duration-300">
             {project.title}
           </h3>
 

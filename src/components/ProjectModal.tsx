@@ -24,7 +24,7 @@ export default function ProjectModal({
           className="fixed inset-0 bg-black/80 backdrop-blur-md z-40"
         />
 
-        <Dialog.Content className="fixed left-1/2 top-1/2 w-full max-w-5xl -translate-x-1/2 -translate-y-1/2 p-6 z-50 focus:outline-none max-h-[85vh] overflow-y-auto">
+        <Dialog.Content className="fixed left-1/2 top-1/2 w-full max-w-5xl -translate-x-1/2 -translate-y-1/2 p-6 z-50 focus:outline-none max-h-[85vh] overflow-y-auto custom-scrollbar">
           <Dialog.Close asChild>
             <motion.button
               whileHover={{ scale: 1.05 }}
@@ -94,14 +94,30 @@ export default function ProjectModal({
                     Tech Stack
                   </p>
                   <div className="flex gap-2 flex-wrap">
-                    {project.tech.map((t) => (
-                      <span
-                        key={t}
-                        className="inline-block px-3 py-1.5 rounded-lg text-xs font-light text-neutral-400 bg-neutral-900/50 border border-neutral-800"
-                      >
-                        {t}
-                      </span>
-                    ))}
+                    {project.tech.map((t, index) => {
+                      const colors = [
+                        'hover:drop-shadow-[0_0_8px_rgba(239,68,68,0.5)] hover:text-red-300 hover:border-red-500/50',
+                        'hover:drop-shadow-[0_0_8px_rgba(34,197,94,0.5)] hover:text-green-300 hover:border-green-500/50',
+                        'hover:drop-shadow-[0_0_8px_rgba(59,130,246,0.5)] hover:text-blue-300 hover:border-blue-500/50',
+                        'hover:drop-shadow-[0_0_8px_rgba(147,51,234,0.5)] hover:text-purple-300 hover:border-purple-500/50',
+                        'hover:drop-shadow-[0_0_8px_rgba(245,158,11,0.5)] hover:text-yellow-300 hover:border-yellow-500/50',
+                        'hover:drop-shadow-[0_0_8px_rgba(236,72,153,0.5)] hover:text-pink-300 hover:border-pink-500/50',
+                        'hover:drop-shadow-[0_0_8px_rgba(75,85,99,0.5)] hover:text-gray-300 hover:border-gray-500/50',
+                        'hover:drop-shadow-[0_0_8px_rgba(14,165,233,0.5)] hover:text-sky-300 hover:border-sky-500/50',
+                        'hover:drop-shadow-[0_0_8px_rgba(168,85,247,0.5)] hover:text-violet-300 hover:border-violet-500/50',
+                        'hover:drop-shadow-[0_0_8px_rgba(251,146,60,0.5)] hover:text-orange-300 hover:border-orange-500/50',
+                        'hover:drop-shadow-[0_0_8px_rgba(16,185,129,0.5)] hover:text-emerald-300 hover:border-emerald-500/50'
+                      ];
+                      const colorClass = colors[index % colors.length];
+                      return (
+                        <span
+                          key={t}
+                          className={`group inline-block px-3 py-1.5 rounded-lg text-xs font-light text-neutral-400 bg-neutral-900/50 border border-neutral-800 transition-all duration-300 ${colorClass}`}
+                        >
+                          {t}
+                        </span>
+                      );
+                    })}
                   </div>
                 </div>
 
@@ -112,9 +128,12 @@ export default function ProjectModal({
                       href={project.playable}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center gap-2 px-6 py-3 text-sm font-medium text-black bg-white rounded-lg hover:bg-neutral-100 transition-all"
+                      className="group relative inline-flex items-center gap-2 px-6 py-3 text-sm font-medium text-black bg-white rounded-lg hover:bg-neutral-100 transition-all overflow-hidden"
                     >
-                      <span>▶</span> Play
+                      <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                        <div className="absolute inset-0 bg-gradient-to-br from-green-500/20 via-transparent to-transparent" />
+                      </div>
+                      <span className="relative z-10 transition-all duration-300 group-hover:drop-shadow-[0_0_8px_rgba(34,197,94,0.5)]">▶</span> <span className="relative z-10 transition-all duration-300 group-hover:drop-shadow-[0_0_8px_rgba(34,197,94,0.5)]">Play</span>
                     </a>
                   )}
 
@@ -123,9 +142,12 @@ export default function ProjectModal({
                       href={project.download}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center gap-2 px-6 py-3 text-sm font-medium text-white border border-neutral-800 rounded-lg hover:border-neutral-700 transition-all"
+                      className="group relative inline-flex items-center gap-2 px-6 py-3 text-sm font-medium text-white border border-neutral-800 rounded-lg hover:border-neutral-700 transition-all overflow-hidden"
                     >
-                      <span>⬇</span> Download
+                      <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                        <div className="absolute inset-0 bg-gradient-to-br from-blue-500/20 via-transparent to-transparent" />
+                      </div>
+                      <span className="relative z-10 transition-all duration-300 group-hover:drop-shadow-[0_0_8px_rgba(59,130,246,0.5)]">⬇</span> <span className="relative z-10 transition-all duration-300 group-hover:drop-shadow-[0_0_8px_rgba(59,130,246,0.5)]">Download</span>
                     </a>
                   )}
 
@@ -134,9 +156,9 @@ export default function ProjectModal({
                       href={project.github}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center gap-2 px-6 py-3 text-sm font-medium text-neutral-400 border border-neutral-900 rounded-lg hover:border-neutral-800 hover:text-neutral-300 transition-all"
+                      className="group inline-flex items-center gap-2 px-6 py-3 text-sm font-medium text-neutral-400 border border-neutral-900 rounded-lg hover:border-neutral-800 hover:text-neutral-300 transition-all"
                     >
-                      <span>⚙</span> GitHub
+                      <span className="transition-all duration-300 group-hover:drop-shadow-[0_0_8px_rgba(75,85,99,0.5)]">⚙</span> <span className="transition-all duration-300 group-hover:drop-shadow-[0_0_8px_rgba(75,85,99,0.5)]">GitHub</span>
                     </a>
                   )}
                 </div>

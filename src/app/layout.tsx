@@ -3,6 +3,7 @@ import type { ReactNode } from "react";
 import { Inter } from "next/font/google";
 import Footer from "@/components/Footer";
 import BackgroundCanvas from "@/components/BackgroundCanvas";
+import ScrollToTopButton from "@/components/ScrollToTopButton";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 
@@ -20,6 +21,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
           {children}
         </main>
         <Footer />
+        <ScrollToTopButton />
       </body>
     </html>
   );

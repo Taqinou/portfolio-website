@@ -11,13 +11,19 @@ export default function ContactSection() {
     <section id="contact" className="py-32 px-6 md:px-12">
       <div className="max-w-7xl mx-auto">
         <div className="mb-20">
-          <p className="text-sm text-neutral-500 mb-6 tracking-wide font-light">CONTACT</p>
-          <h2 className="text-5xl md:text-7xl font-semibold tracking-tight bg-gradient-to-r from-white via-neutral-200 to-neutral-500 bg-clip-text text-transparent mb-8">
+          <div className="relative inline-block mb-6">
+            <div className="absolute inset-0 bg-white/[0.02] backdrop-blur-xl border border-white/[0.05] rounded-lg" />
+            <p className="relative text-sm text-neutral-500 tracking-wide font-light px-3 py-1">CONTACT</p>
+          </div>
+          <h2 className="text-5xl md:text-7xl font-semibold tracking-tight bg-gradient-to-r from-white via-neutral-200 to-neutral-500 bg-clip-text text-transparent mb-8 leading-tight pb-2 animate-gradient-x">
             Let's Work Together
           </h2>
-          <p className="text-lg text-neutral-400 font-light max-w-2xl">
-            Have an exciting project or just want to chat? I'm always open to new opportunities and collaborations.
-          </p>
+          <div className="relative max-w-2xl">
+            <div className="absolute inset-0 bg-white/[0.02] backdrop-blur-xl border border-white/[0.05] rounded-xl" />
+            <p className="relative text-lg text-neutral-400 font-light p-4">
+              Have an exciting project or just want to chat? I'm always open to new opportunities and collaborations.
+            </p>
+          </div>
         </div>
 
         <div className="grid md:grid-cols-3 gap-6">
@@ -33,7 +39,7 @@ export default function ContactSection() {
             </div>
             
             <div className="relative z-10">
-              <h3 className="text-lg font-semibold text-white mb-2">Send Email</h3>
+              <h3 className="text-lg font-semibold text-white mb-2 transition-all duration-300 group-hover:drop-shadow-[0_0_10px_rgba(34,197,94,0.5)] group-hover:text-green-200">Send Email</h3>
               <p className="text-sm text-neutral-500 font-light">Quick message through contact form</p>
               <div className="absolute bottom-8 right-8 text-neutral-700 group-hover:text-neutral-500 transition-colors">
                 →
@@ -55,7 +61,7 @@ export default function ContactSection() {
             </div>
             
             <div className="relative z-10">
-              <h3 className="text-lg font-semibold text-white mb-2">GitHub</h3>
+              <h3 className="text-lg font-semibold text-white mb-2 transition-all duration-300 group-hover:drop-shadow-[0_0_10px_rgba(75,85,99,0.5)] group-hover:text-gray-200">GitHub</h3>
               <p className="text-sm text-neutral-500 font-light">Check out my projects</p>
               <div className="absolute bottom-8 right-8 text-neutral-700 group-hover:text-neutral-500 transition-colors">
                 →
@@ -77,7 +83,7 @@ export default function ContactSection() {
             </div>
             
             <div className="relative z-10">
-              <h3 className="text-lg font-semibold text-white mb-2">LinkedIn</h3>
+              <h3 className="text-lg font-semibold text-white mb-2 transition-all duration-300 group-hover:drop-shadow-[0_0_10px_rgba(59,130,246,0.5)] group-hover:text-blue-200">LinkedIn</h3>
               <p className="text-sm text-neutral-500 font-light">Connect with me professionally</p>
               <div className="absolute bottom-8 right-8 text-neutral-700 group-hover:text-neutral-500 transition-colors">
                 →
