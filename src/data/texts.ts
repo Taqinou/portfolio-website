@@ -35,7 +35,7 @@ export const texts = {
     sending: "Envoi...",
     messageSent: "Message Envoyé !",
     messageSuccess: "Merci de m'avoir contacté. Je vous répondrai bientôt !",
-    namePlaceholder: "Enzo",
+    namePlaceholder: "Nom Prénom",
     emailPlaceholder: "votre.email@exemple.com",
     messagePlaceholder: "Parlez-moi de votre projet...",
     
@@ -96,7 +96,7 @@ export const texts = {
     sending: "Sending...",
     messageSent: "Message Sent!",
     messageSuccess: "Thanks for reaching out. I'll get back to you soon!",
-    namePlaceholder: "Enzo",
+    namePlaceholder: "Name Firstname",
     emailPlaceholder: "your.email@example.com",
     messagePlaceholder: "Tell me about your project...",
     
