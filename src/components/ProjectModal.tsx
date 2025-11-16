@@ -55,7 +55,7 @@ export default function ProjectModal({
               
               {/* Inner shine effect */}
               <div className="absolute inset-0 bg-gradient-to-br from-white/[0.05] via-transparent to-transparent pointer-events-none" />
-              
+
               {/* Image section */}
               <div className="relative h-64 w-full overflow-hidden">
                 {project.image && (
@@ -80,9 +80,20 @@ export default function ProjectModal({
                       {project.type}
                     </p>
                   )}
-                  <Dialog.Title className="text-4xl font-semibold text-white mb-4 tracking-tight">
-                    {project.title}
-                  </Dialog.Title>
+                  <div className="flex items-center gap-4 mb-4">
+                    <Dialog.Title className="text-4xl font-semibold text-white tracking-tight">
+                      {project.title}
+                    </Dialog.Title>
+                    {project.status && (
+                      <div className={`px-3 py-1 rounded-full backdrop-blur-sm border text-xs font-light ${
+                        project.status === 'completed'
+                          ? 'bg-green-500/20 border-green-500/30 text-green-300'
+                          : 'bg-blue-500/20 border-blue-500/30 text-blue-300'
+                      }`}>
+                        {project.status === 'completed' ? 'Finished' : 'In Progress'}
+                      </div>
+                    )}
+                  </div>
                   <p className="text-base text-neutral-400 font-light leading-relaxed max-w-3xl">
                     {project.description}
                   </p>

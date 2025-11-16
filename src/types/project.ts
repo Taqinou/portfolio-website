@@ -8,4 +8,5 @@ export type Project = {
   playable?: string;
   github?: string;
   download?: string;
+  status?: 'completed' | 'in-progress';
 };
