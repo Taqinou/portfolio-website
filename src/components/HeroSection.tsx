@@ -44,7 +44,7 @@ export default function HeroSection() {
                 Junior Developer
               </p>
               <p className="text-base text-neutral-500 font-light leading-relaxed max-w-lg">
-                I’m a junior developer passionate about video games and interactive experiences. I enjoy creating engaging and immersive projects, whether it’s Unity games or web applications. Curious and motivated, I’m always eager to learn new technologies to improve my skills and share my passion.
+                I’m a french junior developer passionate about video games and interactive experiences. I enjoy creating engaging and immersive projects, whether it’s Unity games or web applications. Curious and motivated, I’m always eager to learn new technologies to improve my skills and share my passion.
               </p>
             </motion.div>
 
