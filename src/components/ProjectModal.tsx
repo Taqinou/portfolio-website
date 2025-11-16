@@ -1,7 +1,9 @@
-import * as Dialog from "@radix-ui/react-dialog";
-import { motion } from "framer-motion";
-import Image from "next/image";
-import type { Project } from "@/types/project";
+'use client';
+
+import * as Dialog from '@radix-ui/react-dialog';
+import { motion } from 'framer-motion';
+import Image from 'next/image';
+import type { Project } from '@/types/project';
 
 export default function ProjectModal({
   open,
@@ -12,58 +14,131 @@ export default function ProjectModal({
   onClose: () => void;
   project?: Project | null;
 }) {
-
   return (
     <Dialog.Root open={open} onOpenChange={(o) => !o && onClose()}>
       <Dialog.Portal>
-        <Dialog.Overlay className="fixed inset-0 bg-black/50 z-40" />
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          className="fixed inset-0 bg-black/80 backdrop-blur-md z-40"
+        />
 
-        <Dialog.Content className="fixed left-1/2 top-1/2 w-full max-w-4xl -translate-x-1/2 -translate-y-1/2 p-6 rounded-2xl z-50">
-          <Dialog.Title className="sr-only">{project?.title || "Project"}</Dialog.Title>
+        <Dialog.Content className="fixed left-1/2 top-1/2 w-full max-w-5xl -translate-x-1/2 -translate-y-1/2 p-6 z-50 focus:outline-none max-h-[85vh] overflow-y-auto">
           <Dialog.Close asChild>
-            <button aria-label="Close" className="absolute right-2 top-2 p-2 rounded-md bg-white/10 hover:bg-white/20 z-10 text-white font-bold text-xl">×</button>
+            <motion.button
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              aria-label="Close"
+              className="absolute right-8 top-8 p-2 rounded-full bg-neutral-900/80 hover:bg-neutral-800/80 border border-neutral-800 z-10 text-neutral-400 hover:text-white text-xl transition-all backdrop-blur-sm"
+            >
+              ✕
+            </motion.button>
           </Dialog.Close>
 
           {project && (
-            <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }}>
-              <div className="rounded-lg overflow-hidden bg-gradient-to-br from-[#071a2a] to-[#0b2240] shadow-2xl">
-                <div className="relative h-64 w-full">
-                  {project.image && (
-                    <Image src={project.image} alt={project.title} fill className="object-cover" />
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: 20 }}
+              transition={{ duration: 0.3 }}
+              className="rounded-3xl overflow-hidden bg-white/[0.03] backdrop-blur-2xl border border-white/[0.1] relative shadow-2xl"
+            >
+              {/* Light effect on modal */}
+              <div 
+                className="absolute top-0 left-1/2 -translate-x-1/2 w-[500px] h-[300px] opacity-20 pointer-events-none"
+                style={{
+                  background: 'radial-gradient(ellipse, rgba(255,255,255,0.15) 0%, transparent 70%)',
+                  filter: 'blur(60px)',
+                }}
+              />
+              
+              {/* Inner shine effect */}
+              <div className="absolute inset-0 bg-gradient-to-br from-white/[0.05] via-transparent to-transparent pointer-events-none" />
+              
+              {/* Image section */}
+              <div className="relative h-64 w-full overflow-hidden">
+                {project.image && (
+                  <>
+                    <Image
+                      src={project.image}
+                      alt={project.title}
+                      fill
+                      className="object-cover"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-neutral-950 via-neutral-950/60 to-transparent" />
+                  </>
+                )}
+              </div>
+
+              {/* Content section */}
+              <div className="p-8">
+                {/* Title and type */}
+                <div className="mb-6">
+                  {project.type && (
+                    <p className="text-xs uppercase tracking-widest text-neutral-500 font-light mb-3">
+                      {project.type}
+                    </p>
                   )}
+                  <Dialog.Title className="text-4xl font-semibold text-white mb-4 tracking-tight">
+                    {project.title}
+                  </Dialog.Title>
+                  <p className="text-base text-neutral-400 font-light leading-relaxed max-w-3xl">
+                    {project.description}
+                  </p>
                 </div>
 
-                <div className="p-6">
-                  <h2 className="text-3xl font-bold mb-2">{project.title}</h2>
-                  <p className="text-slate-300 mb-4">{project.description}</p>
-
-                  <div className="flex gap-3 flex-wrap mb-4">
+                {/* Tech stack */}
+                <div className="mb-6 pb-6 border-b border-neutral-900">
+                  <p className="text-xs uppercase tracking-wider text-neutral-500 font-light mb-3">
+                    Tech Stack
+                  </p>
+                  <div className="flex gap-2 flex-wrap">
                     {project.tech.map((t) => (
-                      <span key={t} className="inline-block bg-white/6 text-sky-200 px-3 py-1 rounded-full text-xs">
+                      <span
+                        key={t}
+                        className="inline-block px-3 py-1.5 rounded-lg text-xs font-light text-neutral-400 bg-neutral-900/50 border border-neutral-800"
+                      >
                         {t}
                       </span>
                     ))}
                   </div>
+                </div>
 
-                  <div className="flex gap-3">
-                    {project.playable && (
-                      <a href={project.playable} target="_blank" rel="noopener noreferrer"className="px-4 py-2 bg-gradient-to-r from-blue-500 to-cyan-400 rounded-full text-white font-medium">
-                        Play
-                      </a>
-                    )}
+                {/* Action buttons */}
+                <div className="flex gap-4 flex-wrap">
+                  {project.playable && (
+                    <a
+                      href={project.playable}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-2 px-6 py-3 text-sm font-medium text-black bg-white rounded-lg hover:bg-neutral-100 transition-all"
+                    >
+                      <span>▶</span> Play
+                    </a>
+                  )}
 
-                    {project.download && (
-                      <a href={project.download} target="_blank" rel="noopener noreferrer" className="px-4 py-2 bg-white/6 rounded-full">
-                        Download
-                      </a>
-                    )}
+                  {project.download && (
+                    <a
+                      href={project.download}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-2 px-6 py-3 text-sm font-medium text-white border border-neutral-800 rounded-lg hover:border-neutral-700 transition-all"
+                    >
+                      <span>⬇</span> Download
+                    </a>
+                  )}
 
-                    {project.github && (
-                      <a href={project.github} target="_blank" rel="noopener noreferrer" className="px-4 py-2 bg-white/6 rounded-full">
-                        GitHub
-                      </a>
-                    )}
-                  </div>
+                  {project.github && (
+                    <a
+                      href={project.github}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-2 px-6 py-3 text-sm font-medium text-neutral-400 border border-neutral-900 rounded-lg hover:border-neutral-800 hover:text-neutral-300 transition-all"
+                    >
+                      <span>⚙</span> GitHub
+                    </a>
+                  )}
                 </div>
               </div>
             </motion.div>

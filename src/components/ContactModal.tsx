@@ -20,7 +20,7 @@ export default function ContactModal({ open, onClose }: ContactModalProps) {
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
-    setFormData(prev => ({
+    setFormData((prev) => ({
       ...prev,
       [name]: value,
     }));
@@ -60,32 +60,69 @@ export default function ContactModal({ open, onClose }: ContactModalProps) {
   return (
     <Dialog.Root open={open} onOpenChange={onClose}>
       <Dialog.Portal>
-        <Dialog.Overlay className="fixed inset-0 bg-black/50 z-40" />
-        <Dialog.Content className="fixed left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-50 focus:outline-none">
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          className="fixed inset-0 bg-black/80 backdrop-blur-md z-40"
+        />
+
+        <Dialog.Content className="fixed left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-50 focus:outline-none w-full max-w-md px-4">
           <motion.div
-            initial={{ opacity: 0, y: 10 }}
+            initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            className="rounded-2xl p-8 bg-gradient-to-br from-white/3 to-white/5 border border-white/6 backdrop-blur-lg w-96 max-w-[calc(100vw-2rem)]"
+            exit={{ opacity: 0, y: 20 }}
+            transition={{ duration: 0.3 }}
+            className="rounded-3xl p-10 bg-white/[0.03] backdrop-blur-2xl border border-white/[0.1] relative shadow-2xl"
           >
-            <div className="flex justify-between items-center mb-6">
-              <Dialog.Title className="text-2xl font-bold text-white">Send me a message</Dialog.Title>
-              <Dialog.Close asChild>
-                <button className="absolute top-4 right-4 z-10 text-slate-400 hover:text-white transition-colors">
-                  ✕
-                </button>
-              </Dialog.Close>
+            {/* Light effect on modal */}
+            <div 
+              className="absolute top-0 left-1/2 -translate-x-1/2 w-[400px] h-[200px] opacity-20 pointer-events-none"
+              style={{
+                background: 'radial-gradient(ellipse, rgba(255,255,255,0.15) 0%, transparent 70%)',
+                filter: 'blur(50px)',
+              }}
+            />
+            
+            {/* Inner shine effect */}
+            <div className="absolute inset-0 bg-gradient-to-br from-white/[0.05] via-transparent to-transparent pointer-events-none rounded-3xl" />
+            
+            {/* Close button */}
+            <Dialog.Close asChild>
+              <motion.button
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                aria-label="Close"
+                className="absolute top-6 right-6 p-2 rounded-full bg-neutral-900/80 hover:bg-neutral-800/80 border border-neutral-800 text-neutral-400 hover:text-white text-lg transition-all"
+              >
+                ✕
+              </motion.button>
+            </Dialog.Close>
+
+            {/* Title */}
+            <div className="mb-8">
+              <Dialog.Title className="text-3xl font-semibold text-white mb-2 tracking-tight">
+                Let's Connect
+              </Dialog.Title>
+              <p className="text-sm text-neutral-500 font-light">Send me a message and I'll respond as soon as possible!</p>
             </div>
 
             {submitted ? (
-              <div className="text-center py-8">
-                <p className="text-lg text-green-400 font-medium">✓ Message sent!</p>
-                <p className="text-slate-300 text-sm mt-2">Thanks for reaching out. I'll get back to you soon!</p>
-              </div>
+              <motion.div
+                initial={{ opacity: 0, scale: 0.95 }}
+                animate={{ opacity: 1, scale: 1 }}
+                className="text-center py-12"
+              >
+                <div className="text-5xl mb-4">✓</div>
+                <p className="text-xl font-semibold text-white mb-2">Message Sent!</p>
+                <p className="text-sm text-neutral-400 font-light">Thanks for reaching out. I'll get back to you soon!</p>
+              </motion.div>
             ) : (
-              <form onSubmit={handleSubmit} className="space-y-4">
+              <form onSubmit={handleSubmit} className="space-y-5">
+                {/* Name input */}
                 <div>
-                  <label htmlFor="name" className="block text-sm font-medium text-slate-300 mb-2">
-                    Name
+                  <label htmlFor="name" className="block text-sm font-medium text-neutral-400 mb-2">
+                    Your Name
                   </label>
                   <input
                     type="text"
@@ -94,14 +131,15 @@ export default function ContactModal({ open, onClose }: ContactModalProps) {
                     value={formData.name}
                     onChange={handleChange}
                     required
-                    className="w-full px-4 py-2 rounded-lg bg-white/5 border border-white/10 text-white placeholder-slate-500 focus:outline-none focus:border-blue-400/50 focus:ring-1 focus:ring-blue-400/30 transition-all"
-                    placeholder="Your name"
+                    className="w-full px-4 py-3 rounded-xl bg-neutral-900/50 border border-neutral-800 text-white placeholder-neutral-600 focus:outline-none focus:border-neutral-700 transition-all font-light"
+                    placeholder="Enzo"
                   />
                 </div>
 
+                {/* Email input */}
                 <div>
-                  <label htmlFor="email" className="block text-sm font-medium text-slate-300 mb-2">
-                    Email
+                  <label htmlFor="email" className="block text-sm font-medium text-neutral-400 mb-2">
+                    Your Email
                   </label>
                   <input
                     type="email"
@@ -110,13 +148,14 @@ export default function ContactModal({ open, onClose }: ContactModalProps) {
                     value={formData.email}
                     onChange={handleChange}
                     required
-                    className="w-full px-4 py-2 rounded-lg bg-white/5 border border-white/10 text-white placeholder-slate-500 focus:outline-none focus:border-blue-400/50 focus:ring-1 focus:ring-blue-400/30 transition-all"
+                    className="w-full px-4 py-3 rounded-xl bg-neutral-900/50 border border-neutral-800 text-white placeholder-neutral-600 focus:outline-none focus:border-neutral-700 transition-all font-light"
                     placeholder="your.email@example.com"
                   />
                 </div>
 
+                {/* Message input */}
                 <div>
-                  <label htmlFor="message" className="block text-sm font-medium text-slate-300 mb-2">
+                  <label htmlFor="message" className="block text-sm font-medium text-neutral-400 mb-2">
                     Message
                   </label>
                   <textarea
@@ -126,15 +165,16 @@ export default function ContactModal({ open, onClose }: ContactModalProps) {
                     onChange={handleChange}
                     required
                     rows={4}
-                    className="w-full px-4 py-2 rounded-lg bg-white/5 border border-white/10 text-white placeholder-slate-500 focus:outline-none focus:border-blue-400/50 focus:ring-1 focus:ring-blue-400/30 transition-all resize-none"
-                    placeholder="Your message..."
+                    className="w-full px-4 py-3 rounded-xl bg-neutral-900/50 border border-neutral-800 text-white placeholder-neutral-600 focus:outline-none focus:border-neutral-700 transition-all resize-none font-light"
+                    placeholder="Tell me about your project..."
                   />
                 </div>
 
+                {/* Submit button */}
                 <button
                   type="submit"
                   disabled={loading}
-                  className="w-full px-6 py-3 rounded-lg font-medium bg-gradient-to-r from-blue-500 to-cyan-400 text-white hover:shadow-lg hover:scale-[1.02] transition-all disabled:opacity-50 disabled:cursor-not-allowed"
+                  className="w-full px-6 py-3 rounded-xl text-sm font-medium text-black bg-white hover:bg-neutral-100 disabled:opacity-50 disabled:cursor-not-allowed transition-all"
                 >
                   {loading ? 'Sending...' : 'Send Message'}
                 </button>

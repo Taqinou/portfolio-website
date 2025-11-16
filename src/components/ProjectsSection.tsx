@@ -21,13 +21,20 @@ export default function ProjectsSection() {
   }
 
   return (
-    <section id="projects" className="mt-24">
-      <h2 className="text-3xl font-semibold mb-8">My Projects</h2>
+    <section id="projects" className="py-32 px-6 md:px-12">
+      <div className="max-w-7xl mx-auto">
+        <div className="mb-20">
+          <p className="text-sm text-neutral-500 mb-6 tracking-wide font-light">PROJECTS</p>
+          <h2 className="text-5xl md:text-7xl font-semibold tracking-tight bg-gradient-to-r from-white via-neutral-200 to-neutral-500 bg-clip-text text-transparent">
+            Featured Work
+          </h2>
+        </div>
 
-      <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-10">
-        {projects.map((p) => (
-          <ProjectCard key={p.slug} project={p} onOpen={openProject} />
-        ))}
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+          {projects.map((p) => (
+            <ProjectCard key={p.slug} project={p} onOpen={openProject} />
+          ))}
+        </div>
       </div>
 
       <ProjectModal open={open} onClose={closeProject} project={selected} />
