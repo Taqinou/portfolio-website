@@ -1,21 +1,23 @@
 // src/app/layout.tsx
-import "./../styles/globals.css";
+import "../styles/globals.css";
+import type { ReactNode } from "react";
 import Navbar from "@/components/Navbar";
-import { ReactNode } from "react";
+import Footer from "@/components/Footer";
 
 export const metadata = {
   title: "Portfolio Unity",
-  description: "Portfolio moderne et stylé présentant mes projets Unity.",
+  description: "Portfolio moderne présentant mes projets Unity, web et autres.",
 };
 
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="fr">
-      <body className="min-h-screen">
+      <body className="min-h-screen flex flex-col">
         <Navbar />
-        <main className="max-w-6xl mx-auto px-6 py-12">
+        <main className="flex-grow max-w-6xl mx-auto px-6 py-12">
           {children}
         </main>
+        <Footer />
       </body>
     </html>
   );

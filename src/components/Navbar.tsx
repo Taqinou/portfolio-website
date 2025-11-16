@@ -10,9 +10,8 @@ export default function Navbar() {
         </Link>
 
         <div className="space-x-8 text-lg">
-          <Link href="/" className="hover:text-blue-400 transition">Accueil</Link>
-          <Link href="/projects" className="hover:text-blue-400 transition">Projets</Link>
-          <Link href="/about" className="hover:text-blue-400 transition">À propos</Link>
+          <Link href="/#projects" className="hover:text-blue-400 transition">Projet</Link>
+          <Link href="/#contact" className="hover:text-blue-400 transition">Contact</Link>
         </div>
       </div>
     </nav>
