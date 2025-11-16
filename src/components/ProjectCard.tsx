@@ -1,42 +1,41 @@
-// src/components/ProjectCard.tsx
+"use client";
 
-import Link from "next/link";
-import type { ReactNode } from "react";
+import Image from "next/image";
+import type { Project } from "@/types/project";
 
-type Project = {
-  slug: string;
-  title: string;
-  type?: string;
-  tech: string[];
-  description?: string;
-  image?: string;
-  playable?: string;
-  github?: string;
-  download?: string;
-};
-
-export default function ProjectCard({ project }: { project: Project }) {
+export default function ProjectCard({
+  project,
+  onOpen,
+}: {
+  project: Project;
+  onOpen?: (p: Project) => void;
+}) {
   return (
-    <Link href={`/projects/${project.slug}`}>
-      <div className="group bg-white/5 backdrop-blur-lg border border-white/10 rounded-2xl overflow-hidden shadow-xl p-5 transition-transform duration-300 hover:scale-[1.03] hover:shadow-2xl cursor-pointer">
-        
-        <img
-          src={project.image}
-          alt={project.title}
-          className="rounded-xl mb-4 object-cover h-48 w-full group-hover:scale-110 transition-transform duration-500"
-        />
+    <button
+      onClick={() => onOpen?.(project)}
+      className="group relative flex flex-col h-full rounded-2xl overflow-hidden shadow-lg transform transition-all duration-300 hover:scale-[1.03]"
+    >
+      <div className="relative h-48 w-full flex-shrink-0">
+        {project.image ? (
+          <Image src={project.image} alt={project.title} fill className="object-cover" />
+        ) : (
+          <div className="bg-slate-800 h-full w-full" />
+        )}
 
-        <h3 className="text-2xl font-semibold">{project.title}</h3>
-        <p className="text-gray-300 mt-2">{project.description}</p>
+        <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent opacity-90 group-hover:opacity-100 transition-opacity" />
+      </div>
 
-        <div className="mt-3 flex gap-2 flex-wrap">
+      <div className="p-4 bg-gradient-to-b from-black/20 to-transparent flex-1 flex flex-col">
+        <h3 className="text-xl md:text-2xl font-semibold text-white">{project.title}</h3>
+
+        <div className="mt-auto pt-3 flex gap-2 flex-wrap">
           {project.tech.map((t) => (
-            <span key={t} className="bg-blue-400/20 text-blue-300 px-3 py-1 rounded-lg text-sm">
+            <span key={t} className="inline-block bg-white/6 text-sky-200 px-3 py-1 rounded-full text-xs">
               {t}
             </span>
           ))}
         </div>
       </div>
-    </Link>
+    </button>
   );
 }

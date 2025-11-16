@@ -1,8 +1,10 @@
-// src/app/layout.tsx
 import "../styles/globals.css";
 import type { ReactNode } from "react";
+import { Inter } from "next/font/google";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+
+const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 
 export const metadata = {
   title: "Portfolio Unity",
@@ -11,10 +13,10 @@ export const metadata = {
 
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
-    <html lang="fr">
-      <body className="min-h-screen flex flex-col">
+    <html lang="fr" className={inter.variable}>
+      <body className="min-h-screen flex flex-col font-sans">
         <Navbar />
-        <main className="flex-grow max-w-6xl mx-auto px-6 py-12">
+        <main className="flex-grow w-full max-w-6xl mx-auto px-6 py-12">
           {children}
         </main>
         <Footer />
