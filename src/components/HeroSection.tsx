@@ -83,7 +83,7 @@ export default function HeroSection() {
               </a>
 
               <a
-                href="/cv.pdf"
+                href="/CV.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="group relative inline-flex items-center justify-center px-8 py-4 text-sm font-medium text-neutral-300 rounded-lg transition-all hover:scale-[1.02] active:scale-[0.98] bg-white/[0.02] backdrop-blur-xl border border-white/[0.06] hover:border-white/[0.1] hover:text-white overflow-hidden"
