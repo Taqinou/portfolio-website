@@ -9,4 +9,5 @@ export type Project = {
   github?: string;
   download?: string;
   status?: 'completed' | 'in-progress';
+  visit?: string;
 };

@@ -9,7 +9,8 @@ export const projects: Project[] = [
     description: "A modern and interactive portfolio built with Next.js and React, featuring a responsive interface. Showcasing my projects. Integrated with Tailwind CSS and PostCSS for styling, TypeScript for code robustness, Framer Motion for smooth animations, Radix UI for accessible components, Lucide React for icons, clsx for utility classes, Resend for email functionality, and ESLint for code quality.",
     image: "/img/projects/portfolio-minimal.svg",
     github: "https://github.com/Taqinou/portfolio-website",
-    status: "completed"
+    status: "completed",
+    visit: "https://enzo-gazzoli.vercel.app"
   },
   {
   slug: "apartment-hub",
@@ -19,7 +20,8 @@ export const projects: Project[] = [
   description: "A full-stack web application built during my final year of Bachelor's degree. The platform aggregates apartment listings from multiple real-estate websites into a single interface, helping users avoid browsing several sites separately. It centralizes results, simplifies comparison, and improves the apartment-hunting experience.",
   image: "/img/projects/apartment-hub.svg",
   github: "https://github.com/Toto028-GT/ProjetTechno-Web",
-  status: "completed"
+  status: "completed",
+  visit: "https://projet-techno-web.vercel.app"
   },
   {
   slug: "functional-calendar",

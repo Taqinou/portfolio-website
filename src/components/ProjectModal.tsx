@@ -162,6 +162,20 @@ export default function ProjectModal({
                     </a>
                   )}
 
+                  {project.visit && (
+                    <a
+                      href={project.visit}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="group relative inline-flex items-center gap-2 px-6 py-3 text-sm font-medium text-black bg-white rounded-lg hover:bg-neutral-100 transition-all overflow-hidden"
+                    >
+                      <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                        <div className="absolute inset-0 bg-gradient-to-br from-green-500/20 via-transparent to-transparent" />
+                      </div>
+                      <span className="relative z-10 transition-all duration-300 group-hover:drop-shadow-[0_0_8px_rgba(34,197,94,0.5)]">▶</span> <span className="relative z-10 transition-all duration-300 group-hover:drop-shadow-[0_0_8px_rgba(34,197,94,0.5)]">Visit Site</span>
+                    </a>
+                  )}
+
                   {project.github && (
                     <a
                       href={project.github}
@@ -172,6 +186,8 @@ export default function ProjectModal({
                       <span className="transition-all duration-300 group-hover:drop-shadow-[0_0_8px_rgba(75,85,99,0.5)]">⚙</span> <span className="transition-all duration-300 group-hover:drop-shadow-[0_0_8px_rgba(75,85,99,0.5)]">GitHub</span>
                     </a>
                   )}
+
+
                 </div>
               </div>
             </motion.div>
