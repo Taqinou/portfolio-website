@@ -33,7 +33,6 @@ export default function ContactSection() {
             </div>
             
             <div className="relative z-10">
-              <div className="mb-4 text-4xl">📧</div>
               <h3 className="text-lg font-semibold text-white mb-2">Send Email</h3>
               <p className="text-sm text-neutral-500 font-light">Quick message through contact form</p>
               <div className="absolute bottom-8 right-8 text-neutral-700 group-hover:text-neutral-500 transition-colors">
@@ -56,7 +55,6 @@ export default function ContactSection() {
             </div>
             
             <div className="relative z-10">
-              <div className="mb-4 text-4xl">🔗</div>
               <h3 className="text-lg font-semibold text-white mb-2">GitHub</h3>
               <p className="text-sm text-neutral-500 font-light">Check out my projects</p>
               <div className="absolute bottom-8 right-8 text-neutral-700 group-hover:text-neutral-500 transition-colors">
@@ -79,7 +77,6 @@ export default function ContactSection() {
             </div>
             
             <div className="relative z-10">
-              <div className="mb-4 text-4xl">💼</div>
               <h3 className="text-lg font-semibold text-white mb-2">LinkedIn</h3>
               <p className="text-sm text-neutral-500 font-light">Connect with me professionally</p>
               <div className="absolute bottom-8 right-8 text-neutral-700 group-hover:text-neutral-500 transition-colors">

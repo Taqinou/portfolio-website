@@ -7,8 +7,8 @@ import BackgroundCanvas from "@/components/BackgroundCanvas";
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 
 export const metadata = {
-  title: "Portfolio Unity",
-  description: "Portfolio moderne présentant mes projets Unity, web et autres.",
+  title: "GAZZOLI Enzo",
+  description: "Portfolio présentant mes projets.",
 };
 
 export default function RootLayout({ children }: { children: ReactNode }) {
