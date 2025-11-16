@@ -6,8 +6,12 @@ import { projects } from "../data/projects";
 import ProjectCard from "./ProjectCard";
 import ProjectModal from "./ProjectModal";
 import type { Project } from "../types/project";
+import { useLanguage } from '@/contexts/LanguageContext';
+import { texts } from '@/data/texts';
 
 export default function ProjectsSection() {
+  const { lang } = useLanguage();
+  const t = texts[lang];
   const [selected, setSelected] = useState<Project | null>(null);
   const [open, setOpen] = useState(false);
 
@@ -34,11 +38,11 @@ export default function ProjectsSection() {
               whileHover={{ scale: 1.1, y: -3, rotateX: -3 }}
               className="relative text-sm text-neutral-500 tracking-wide font-light px-3 py-1 group-hover:text-white group-hover:drop-shadow-[0_0_10px_rgba(255,255,255,0.3)]"
             >
-              PROJECTS
+              {t.projects}
             </motion.p>
           </div>
-          <h2 className="text-5xl md:text-7xl font-semibold tracking-tight bg-gradient-to-r from-white via-neutral-200 to-neutral-500 bg-clip-text text-transparent animate-gradient-x">
-            Featured Work
+          <h2 className="text-5xl md:text-7xl font-semibold tracking-tight bg-gradient-to-r from-white via-neutral-200 to-neutral-500 bg-clip-text text-transparent animate-gradient-x pb-3">
+            {t.featuredWork}
           </h2>
         </div>
 

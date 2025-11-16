@@ -1,9 +1,10 @@
 export type Project = {
   slug: string;
   title: string;
+  titleKey?: string;
   type?: string;
   tech: string[];
-  description?: string;
+  descriptionKey?: string;
   image?: string;
   playable?: string;
   github?: string;

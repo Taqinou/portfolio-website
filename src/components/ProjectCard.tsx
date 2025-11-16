@@ -3,6 +3,8 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
 import type { Project } from "@/types/project";
+import { useLanguage } from '@/contexts/LanguageContext';
+import { texts } from '@/data/texts';
 
 export default function ProjectCard({
   project,
@@ -11,6 +13,8 @@ export default function ProjectCard({
   project: Project;
   onOpen?: (p: Project) => void;
 }) {
+  const { lang } = useLanguage();
+  const t = texts[lang];
   return (
     <motion.button
       onClick={() => onOpen?.(project)}
@@ -56,13 +60,13 @@ export default function ProjectCard({
 
         {/* Content section */}
         <div className="p-6 space-y-3">
-          <h3 className="text-2xl font-semibold text-white group-hover:bg-gradient-to-r group-hover:from-blue-400 group-hover:via-purple-400 group-hover:to-pink-400 group-hover:bg-clip-text group-hover:text-transparent transition-all duration-300">
-            {project.title}
+          <h3 className="text-xl font-semibold text-white group-hover:bg-gradient-to-r group-hover:from-blue-400 group-hover:via-purple-400 group-hover:to-pink-400 group-hover:bg-clip-text group-hover:text-transparent transition-all duration-300 line-clamp-2 min-h-[4rem]">
+            {project.titleKey ? t[project.titleKey as keyof typeof t] : project.title}
           </h3>
 
-          {project.description && (
-            <p className="text-sm text-neutral-400 line-clamp-2 font-light leading-relaxed">
-              {project.description}
+          {project.descriptionKey && (
+            <p className="text-sm text-neutral-400 line-clamp-2 font-light leading-relaxed min-h-[2.5rem]">
+              {t[project.descriptionKey as keyof typeof t]}
             </p>
           )}
 

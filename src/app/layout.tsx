@@ -4,6 +4,8 @@ import { Inter } from "next/font/google";
 import Footer from "@/components/Footer";
 import BackgroundCanvas from "@/components/BackgroundCanvas";
 import ScrollToTopButton from "@/components/ScrollToTopButton";
+import LanguageSwitch from "@/components/LanguageSwitch";
+import { LanguageProvider } from "@/contexts/LanguageContext";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 
@@ -16,12 +18,15 @@ export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="fr" className={inter.variable}>
       <body className="min-h-screen flex flex-col font-sans bg-black text-white antialiased">
-        <BackgroundCanvas />
-        <main className="flex-grow w-full relative z-10">
-          {children}
-        </main>
-        <Footer />
-        <ScrollToTopButton />
+        <LanguageProvider>
+          <BackgroundCanvas />
+          <LanguageSwitch />
+          <main className="flex-grow w-full relative z-10">
+            {children}
+          </main>
+          <Footer />
+          <ScrollToTopButton />
+        </LanguageProvider>
       </body>
     </html>
   );

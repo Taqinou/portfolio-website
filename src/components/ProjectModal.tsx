@@ -4,6 +4,8 @@ import * as Dialog from '@radix-ui/react-dialog';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 import type { Project } from '@/types/project';
+import { useLanguage } from '@/contexts/LanguageContext';
+import { texts } from '@/data/texts';
 
 export default function ProjectModal({
   open,
@@ -14,6 +16,8 @@ export default function ProjectModal({
   onClose: () => void;
   project?: Project | null;
 }) {
+  const { lang } = useLanguage();
+  const t = texts[lang];
   return (
     <Dialog.Root open={open} onOpenChange={(o) => !o && onClose()}>
       <Dialog.Portal>
@@ -82,7 +86,7 @@ export default function ProjectModal({
                   )}
                   <div className="flex items-center gap-4 mb-4">
                     <Dialog.Title className="text-4xl font-semibold text-white tracking-tight">
-                      {project.title}
+                      {project.titleKey ? t[project.titleKey as keyof typeof t] : project.title}
                     </Dialog.Title>
                     {project.status && (
                       <div className={`px-3 py-1 rounded-full backdrop-blur-sm border text-xs font-light ${
@@ -90,19 +94,19 @@ export default function ProjectModal({
                           ? 'bg-green-500/20 border-green-500/30 text-green-300'
                           : 'bg-blue-500/20 border-blue-500/30 text-blue-300'
                       }`}>
-                        {project.status === 'completed' ? 'Finished' : 'In Progress'}
+                        {project.status === 'completed' ? t.finished : t.inProgress}
                       </div>
                     )}
                   </div>
                   <p className="text-base text-neutral-400 font-light leading-relaxed max-w-3xl">
-                    {project.description}
+                    {project.descriptionKey && t[project.descriptionKey as keyof typeof t]}
                   </p>
                 </div>
 
                 {/* Tech stack */}
                 <div className="mb-6 pb-6 border-b border-neutral-900">
                   <p className="text-xs uppercase tracking-wider text-neutral-500 font-light mb-3">
-                    Tech Stack
+                    {t.techStack}
                   </p>
                   <div className="flex gap-2 flex-wrap">
                     {project.tech.map((t, index) => {
@@ -144,7 +148,7 @@ export default function ProjectModal({
                       <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
                         <div className="absolute inset-0 bg-gradient-to-br from-green-500/20 via-transparent to-transparent" />
                       </div>
-                      <span className="relative z-10 transition-all duration-300 group-hover:drop-shadow-[0_0_8px_rgba(34,197,94,0.5)]">▶</span> <span className="relative z-10 transition-all duration-300 group-hover:drop-shadow-[0_0_8px_rgba(34,197,94,0.5)]">Play</span>
+                      <span className="relative z-10 transition-all duration-300 group-hover:drop-shadow-[0_0_8px_rgba(34,197,94,0.5)]">▶</span> <span className="relative z-10 transition-all duration-300 group-hover:drop-shadow-[0_0_8px_rgba(34,197,94,0.5)]">{t.play}</span>
                     </a>
                   )}
 
@@ -158,7 +162,7 @@ export default function ProjectModal({
                       <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
                         <div className="absolute inset-0 bg-gradient-to-br from-blue-500/20 via-transparent to-transparent" />
                       </div>
-                      <span className="relative z-10 transition-all duration-300 group-hover:drop-shadow-[0_0_8px_rgba(59,130,246,0.5)]">⬇</span> <span className="relative z-10 transition-all duration-300 group-hover:drop-shadow-[0_0_8px_rgba(59,130,246,0.5)]">Download</span>
+                      <span className="relative z-10 transition-all duration-300 group-hover:drop-shadow-[0_0_8px_rgba(59,130,246,0.5)]">⬇</span> <span className="relative z-10 transition-all duration-300 group-hover:drop-shadow-[0_0_8px_rgba(59,130,246,0.5)]">{t.download}</span>
                     </a>
                   )}
 
@@ -172,7 +176,7 @@ export default function ProjectModal({
                       <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
                         <div className="absolute inset-0 bg-gradient-to-br from-green-500/20 via-transparent to-transparent" />
                       </div>
-                      <span className="relative z-10 transition-all duration-300 group-hover:drop-shadow-[0_0_8px_rgba(34,197,94,0.5)]">▶</span> <span className="relative z-10 transition-all duration-300 group-hover:drop-shadow-[0_0_8px_rgba(34,197,94,0.5)]">Visit Site</span>
+                      <span className="relative z-10 transition-all duration-300 group-hover:drop-shadow-[0_0_8px_rgba(34,197,94,0.5)]">▶</span> <span className="relative z-10 transition-all duration-300 group-hover:drop-shadow-[0_0_8px_rgba(34,197,94,0.5)]">{t.visitSite}</span>
                     </a>
                   )}
 

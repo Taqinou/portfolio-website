@@ -3,6 +3,8 @@
 import { useState } from 'react';
 import * as Dialog from '@radix-ui/react-dialog';
 import { motion } from 'framer-motion';
+import { useLanguage } from '@/contexts/LanguageContext';
+import { texts } from '@/data/texts';
 
 interface ContactModalProps {
   open: boolean;
@@ -10,6 +12,8 @@ interface ContactModalProps {
 }
 
 export default function ContactModal({ open, onClose }: ContactModalProps) {
+  const { lang } = useLanguage();
+  const t = texts[lang];
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -102,9 +106,9 @@ export default function ContactModal({ open, onClose }: ContactModalProps) {
             {/* Title */}
             <div className="mb-8">
               <Dialog.Title className="text-3xl font-semibold text-white mb-2 tracking-tight">
-                Let's Connect
+                {t.letsConnect}
               </Dialog.Title>
-              <p className="text-sm text-neutral-500 font-light">Send me a message and I'll respond as soon as possible!</p>
+              <p className="text-sm text-neutral-500 font-light">{t.contactModalDesc}</p>
             </div>
 
             {submitted ? (
@@ -114,15 +118,15 @@ export default function ContactModal({ open, onClose }: ContactModalProps) {
                 className="text-center py-12"
               >
                 <div className="text-5xl mb-4">✓</div>
-                <p className="text-xl font-semibold text-white mb-2">Message Sent!</p>
-                <p className="text-sm text-neutral-400 font-light">Thanks for reaching out. I'll get back to you soon!</p>
+                <p className="text-xl font-semibold text-white mb-2">{t.messageSent}</p>
+                <p className="text-sm text-neutral-400 font-light">{t.messageSuccess}</p>
               </motion.div>
             ) : (
               <form onSubmit={handleSubmit} className="space-y-5">
                 {/* Name input */}
                 <div>
                   <label htmlFor="name" className="block text-sm font-medium text-neutral-400 mb-2">
-                    Your Name
+                    {t.yourName}
                   </label>
                   <input
                     type="text"
@@ -132,14 +136,14 @@ export default function ContactModal({ open, onClose }: ContactModalProps) {
                     onChange={handleChange}
                     required
                     className="w-full px-4 py-3 rounded-xl bg-neutral-900/50 border border-neutral-800 text-white placeholder-neutral-600 focus:outline-none focus:border-neutral-700 transition-all font-light"
-                    placeholder="Enzo"
+                    placeholder={t.namePlaceholder}
                   />
                 </div>
 
                 {/* Email input */}
                 <div>
                   <label htmlFor="email" className="block text-sm font-medium text-neutral-400 mb-2">
-                    Your Email
+                    {t.yourEmail}
                   </label>
                   <input
                     type="email"
@@ -149,14 +153,14 @@ export default function ContactModal({ open, onClose }: ContactModalProps) {
                     onChange={handleChange}
                     required
                     className="w-full px-4 py-3 rounded-xl bg-neutral-900/50 border border-neutral-800 text-white placeholder-neutral-600 focus:outline-none focus:border-neutral-700 transition-all font-light"
-                    placeholder="your.email@example.com"
+                    placeholder={t.emailPlaceholder}
                   />
                 </div>
 
                 {/* Message input */}
                 <div>
                   <label htmlFor="message" className="block text-sm font-medium text-neutral-400 mb-2">
-                    Message
+                    {t.message}
                   </label>
                   <textarea
                     id="message"
@@ -166,7 +170,7 @@ export default function ContactModal({ open, onClose }: ContactModalProps) {
                     required
                     rows={4}
                     className="w-full px-4 py-3 rounded-xl bg-neutral-900/50 border border-neutral-800 text-white placeholder-neutral-600 focus:outline-none focus:border-neutral-700 transition-all resize-none font-light"
-                    placeholder="Tell me about your project..."
+                    placeholder={t.messagePlaceholder}
                   />
                 </div>
 
@@ -176,7 +180,7 @@ export default function ContactModal({ open, onClose }: ContactModalProps) {
                   disabled={loading}
                   className="w-full px-6 py-3 rounded-xl text-sm font-medium text-black bg-white hover:bg-neutral-100 disabled:opacity-50 disabled:cursor-not-allowed transition-all"
                 >
-                  {loading ? 'Sending...' : 'Send Message'}
+                  {loading ? t.sending : t.sendMessage}
                 </button>
               </form>
             )}
