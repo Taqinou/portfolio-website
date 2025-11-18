@@ -24,6 +24,8 @@ export const texts = {
     githubDesc: "Consultez mes projets",
     linkedin: "LinkedIn",
     linkedinDesc: "Connectez-vous avec moi professionnellement",
+    fiverr: "Fiverr",
+    fiverrDesc: "Engagez-moi pour vos projets",
     
     // Contact Modal
     letsConnect: "Restons en Contact",
@@ -85,6 +87,8 @@ export const texts = {
     githubDesc: "Check out my projects",
     linkedin: "LinkedIn",
     linkedinDesc: "Connect with me professionally",
+    fiverr: "Fiverr",
+    fiverrDesc: "Hire me for your projects",
     
     // Contact Modal
     letsConnect: "Let's Connect",
