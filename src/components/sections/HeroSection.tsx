@@ -104,6 +104,7 @@ export default function HeroSection() {
                   className="object-cover grayscale contrast-110 brightness-90"
                   sizes="500px"
                   priority
+                  fetchPriority="high"
                 />
                 {/* Gradient overlays for B&W effect */}
                 <div className="absolute inset-0 bg-gradient-to-br from-transparent via-black/10 to-black/30" />

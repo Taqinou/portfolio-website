@@ -1,7 +1,12 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  /* config options here */
+  output: 'standalone',
+  experimental: {
+    optimizeCss: true,
+    optimizeImages: true,
+    modern: true,
+  },
 };
 
 export default nextConfig;
