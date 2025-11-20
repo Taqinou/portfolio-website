@@ -4,8 +4,6 @@ const nextConfig: NextConfig = {
   output: 'standalone',
   experimental: {
     optimizeCss: true,
-    optimizeImages: true,
-    modern: true,
   },
 };
 
