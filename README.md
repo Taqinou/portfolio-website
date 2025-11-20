@@ -296,6 +296,7 @@ This project is open source and available under the [MIT License](LICENSE).
 
 - Portfolio: [enzo-gazzoli.vercel.app](https://enzo-gazzoli.vercel.app)
 - GitHub: [@Taqinou](https://github.com/Taqinou)
+- Fiverr: [Taqin](https://fr.fiverr.com/s/DBkdb3X)
 
 ## 🤝 Contributing
 
