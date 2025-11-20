@@ -1,11 +1,11 @@
 "use client";
 
 import { useState } from "react";
-import { projects } from "../data/projects";
-import ProjectCard from "./ProjectCard";
-import ProjectModal from "./ProjectModal";
-import SectionHeader from "./ui/SectionHeader";
-import type { Project } from "../types/project";
+import { projects } from "../../data/projects";
+import ProjectCard from "../features/ProjectCard";
+import ProjectModal from "../modals/ProjectModal";
+import SectionHeader from "../ui/SectionHeader";
+import type { Project } from "../../types/project";
 import { useLanguage } from '@/contexts/LanguageContext';
 import { texts } from '@/data/texts';
 

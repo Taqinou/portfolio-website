@@ -4,7 +4,7 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import { useLanguage } from '@/contexts/LanguageContext';
 import { texts } from '@/data/texts';
-import Button from './ui/Button';
+import Button from '../ui/Button';
 
 export default function HeroSection() {
   const { lang } = useLanguage();

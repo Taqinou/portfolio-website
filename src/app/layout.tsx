@@ -1,10 +1,10 @@
 import "../styles/globals.css";
 import type { ReactNode } from "react";
 import { Inter } from "next/font/google";
-import Footer from "@/components/Footer";
-import BackgroundCanvas from "@/components/BackgroundCanvas";
-import ScrollToTopButton from "@/components/ScrollToTopButton";
-import LanguageSwitch from "@/components/LanguageSwitch";
+import Footer from "@/components/layout/Footer";
+import BackgroundCanvas from "@/components/layout/BackgroundCanvas";
+import ScrollToTopButton from "@/components/layout/ScrollToTopButton";
+import LanguageSwitch from "@/components/features/LanguageSwitch";
 import { LanguageProvider } from "@/contexts/LanguageContext";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });

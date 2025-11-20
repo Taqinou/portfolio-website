@@ -1,9 +1,9 @@
 'use client';
 
 import { useState } from 'react';
-import ContactModal from './ContactModal';
-import SectionHeader from './ui/SectionHeader';
-import ContactCard from './ui/ContactCard';
+import ContactModal from '../modals/ContactModal';
+import SectionHeader from '../ui/SectionHeader';
+import ContactCard from '../ui/ContactCard';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { texts } from '@/data/texts';
 

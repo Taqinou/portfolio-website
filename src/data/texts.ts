@@ -126,5 +126,3 @@ export const texts = {
     projectGameLibTitle: "Game Library App",
   },
 } as const;
-
-export type Lang = keyof typeof texts;
