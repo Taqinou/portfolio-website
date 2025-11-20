@@ -30,21 +30,21 @@ export const projects: Project[] = [
   title: "Functional Calendar",
   titleKey: "projectCalendarTitle",
   type: "web",
-  tech: ["JavaScript", "ESLint", "Mongoose", "SQL"],
+  tech: ["JavaScript", "ESLint", "Mongoose", "SQL", "HTML", "CSS"],
   descriptionKey: "projectCalendarDesc",
   image: "/img/projects/functional-calendar.svg",
   github: "https://github.com/JusteHugoStudent/ACL-2025-OpenForWork",
   status: "in-progress"
   },
   {
-  "slug": "game-library-java",
-  "title": "Game Library App",
-  "titleKey": "projectGameLibTitle",
-  "type": "Java App",
-  "tech": ["Java", "SQL"],
-  "descriptionKey": "projectGameLibDesc",
-  "image": "/img/projects/game-library.svg",
-  "github": "https://github.com/Toto028-GT/ProjetJava",
-  "status": "completed"
+  slug: "game-library-java",
+  title: "Game Library App",
+  titleKey: "projectGameLibTitle",
+  type: "Java App",
+  tech: ["Java", "SQL"],
+  descriptionKey: "projectGameLibDesc",
+  image: "/img/projects/game-library.svg",
+  github: "https://github.com/Toto028-GT/ProjetJava",
+  status: "completed"
 }
 ];
