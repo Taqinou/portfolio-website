@@ -17,9 +17,7 @@ export const metadata = {
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="fr" className={inter.variable}>
-      <head>
-        <link rel="preconnect" href="https://vercel.app" />
-      </head>
+      <head />
       <body className="min-h-screen flex flex-col font-sans bg-black text-white antialiased">
         <LanguageProvider>
           <BackgroundCanvas />
