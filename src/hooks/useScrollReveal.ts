@@ -24,7 +24,6 @@ export const scrollRevealVariants = {
 
 interface UseScrollRevealOptions {
   once?: boolean;
-  margin?: string;
 }
 
 /**
@@ -33,9 +32,9 @@ interface UseScrollRevealOptions {
  * @returns Object containing ref and isInView state
  */
 export function useScrollReveal(options: UseScrollRevealOptions = {}) {
-  const { once = true, margin = '-50px' } = options;
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once, margin: margin as any });
+  const { once = true } = options;
+  const ref = useRef<HTMLDivElement | null>(null);
+  const isInView = useInView(ref, { once });
 
   return { ref, isInView };
 }
