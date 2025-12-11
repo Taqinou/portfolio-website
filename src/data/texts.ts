@@ -3,9 +3,9 @@ export const texts = {
     // Hero Section
     portfolio: 'PORTFOLIO',
     hiIm: 'Salut, je suis',
-    juniorDeveloper: 'Développeur Junior',
+    juniorDeveloper: 'Développeur Fullstack',
     heroDescription:
-      'Je suis un développeur junior français passionné par les jeux vidéo et la création de projets interactifs. J’aime développer des jeux Unity et des applications web qui captivent les utilisateurs. Curieux et motivé, je cherche toujours à explorer de nouvelles technologies pour améliorer mes compétences et partager ma passion.',
+      "Développeur Fullstack passionné par le développement web moderne. Je conçois des applications complètes, du frontend (React, Next.js, TypeScript) au backend (Node.js, FastAPI, bases de données). Curieux et motivé, j'aime créer des expériences utilisateur fluides et des architectures robustes.",
     viewProjects: 'Voir les Projets',
     getInTouch: 'Me Contacter',
     downloadCV: 'Télécharger CV',
@@ -152,9 +152,9 @@ export const texts = {
     // Hero Section
     portfolio: 'PORTFOLIO',
     hiIm: "Hi, I'm",
-    juniorDeveloper: 'Junior Developer',
+    juniorDeveloper: 'Junior Fullstack Developer',
     heroDescription:
-      "I'm a french junior developer passionate about video games and interactive experiences. I enjoy creating engaging and immersive projects, whether it's Unity games or web applications. Curious and motivated, I'm always eager to learn new technologies to improve my skills and share my passion.",
+      'Fullstack Developer passionate about modern web development. I build complete applications, from frontend (React, Next.js, TypeScript) to backend (Node.js, FastAPI, databases). Curious and motivated, I love creating smooth user experiences and robust architectures. Always learning new technologies.',
     viewProjects: 'View Projects',
     getInTouch: 'Get in Touch',
     downloadCV: 'Download CV',
