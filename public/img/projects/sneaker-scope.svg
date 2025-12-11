@@ -1,0 +1,136 @@
+<svg width="800" height="600" viewBox="0 0 800 600" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="800" height="600" fill="#000000"/>
+  
+  <!-- Subtle gradient overlays -->
+  <defs>
+    <radialGradient id="glowBlue" cx="30%" cy="40%" r="50%">
+      <stop offset="0%" style="stop-color:rgb(59,130,246);stop-opacity:0.12" />
+      <stop offset="100%" style="stop-color:rgb(59,130,246);stop-opacity:0" />
+    </radialGradient>
+    <radialGradient id="glowPurple" cx="70%" cy="60%" r="40%">
+      <stop offset="0%" style="stop-color:rgb(168,85,247);stop-opacity:0.08" />
+      <stop offset="100%" style="stop-color:rgb(168,85,247);stop-opacity:0" />
+    </radialGradient>
+    <linearGradient id="heatGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#22c55e" />
+      <stop offset="50%" style="stop-color:#eab308" />
+      <stop offset="100%" style="stop-color:#ef4444" />
+    </linearGradient>
+    <linearGradient id="priceGradient" x1="0%" y1="100%" x2="0%" y2="0%">
+      <stop offset="0%" style="stop-color:#3b82f6;stop-opacity:0.3" />
+      <stop offset="100%" style="stop-color:#3b82f6;stop-opacity:0" />
+    </linearGradient>
+  </defs>
+  
+  <rect width="800" height="600" fill="url(#glowBlue)"/>
+  <rect width="800" height="600" fill="url(#glowPurple)"/>
+  
+  <!-- Browser window mockup -->
+  <g transform="translate(80, 60)">
+    <!-- Window frame -->
+    <rect x="0" y="0" width="640" height="480" rx="12" fill="#0A0A0A" stroke="#262626" stroke-width="1"/>
+    
+    <!-- Title bar -->
+    <rect x="0" y="0" width="640" height="40" rx="12" fill="#171717"/>
+    <rect x="0" y="40" width="640" height="1" fill="#262626"/>
+    
+    <!-- Window controls -->
+    <circle cx="20" cy="20" r="5" fill="#404040"/>
+    <circle cx="40" cy="20" r="5" fill="#404040"/>
+    <circle cx="60" cy="20" r="5" fill="#404040"/>
+    
+    <!-- URL bar -->
+    <rect x="90" y="12" width="460" height="16" rx="8" fill="#0A0A0A" stroke="#262626" stroke-width="1"/>
+    <text x="100" y="23" font-family="system-ui, -apple-system, sans-serif" font-size="10" fill="#525252">sneakerscope.app</text>
+    
+    <!-- Dashboard content -->
+    <g transform="translate(24, 60)">
+      <!-- Header with Heat Score -->
+      <rect x="0" y="0" width="592" height="80" rx="8" fill="#171717" stroke="#262626" stroke-width="1"/>
+      
+      <!-- Sneaker icon placeholder -->
+      <rect x="16" y="16" width="48" height="48" rx="8" fill="#262626"/>
+      <text x="28" y="48" font-family="system-ui" font-size="24" fill="#ffffff">👟</text>
+      
+      <!-- Sneaker name -->
+      <rect x="80" y="16" width="200" height="20" rx="4" fill="#262626"/>
+      <rect x="80" y="44" width="140" height="12" rx="3" fill="#171717"/>
+      
+      <!-- Heat Score -->
+      <g transform="translate(480, 16)">
+        <rect x="0" y="0" width="96" height="48" rx="8" fill="#0A0A0A" stroke="url(#heatGradient)" stroke-width="2"/>
+        <text x="48" y="20" font-family="system-ui" font-size="10" fill="#a3a3a3" text-anchor="middle">HEAT SCORE</text>
+        <text x="48" y="40" font-family="system-ui" font-size="18" fill="#22c55e" font-weight="bold" text-anchor="middle">87</text>
+      </g>
+      
+      <!-- Price chart area -->
+      <g transform="translate(0, 96)">
+        <rect x="0" y="0" width="380" height="180" rx="8" fill="#0A0A0A" stroke="#262626" stroke-width="1"/>
+        
+        <!-- Chart title -->
+        <text x="16" y="24" font-family="system-ui" font-size="11" fill="#a3a3a3">30-Day Price Trend</text>
+        
+        <!-- Chart area with gradient fill -->
+        <rect x="16" y="36" width="348" height="120" rx="4" fill="url(#priceGradient)"/>
+        
+        <!-- Chart line -->
+        <polyline 
+          points="16,140 50,130 90,135 130,110 170,100 210,95 250,85 290,75 330,80 364,60" 
+          stroke="#3b82f6" 
+          stroke-width="2" 
+          fill="none"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        />
+        
+        <!-- Chart dots -->
+        <circle cx="130" cy="110" r="4" fill="#3b82f6"/>
+        <circle cx="250" cy="85" r="4" fill="#3b82f6"/>
+        <circle cx="364" cy="60" r="4" fill="#22c55e"/>
+      </g>
+      
+      <!-- Right sidebar - Stats cards -->
+      <g transform="translate(396, 96)">
+        <!-- Market Stats Card -->
+        <rect x="0" y="0" width="196" height="85" rx="8" fill="#0A0A0A" stroke="#262626" stroke-width="1"/>
+        <text x="12" y="22" font-family="system-ui" font-size="10" fill="#a3a3a3">MARKET STATS</text>
+        
+        <rect x="12" y="32" width="80" height="20" rx="4" fill="#171717"/>
+        <rect x="100" y="32" width="80" height="20" rx="4" fill="#171717"/>
+        <rect x="12" y="58" width="80" height="20" rx="4" fill="#171717"/>
+        <rect x="100" y="58" width="80" height="20" rx="4" fill="#171717"/>
+        
+        <!-- AI Signal Card -->
+        <rect x="0" y="95" width="196" height="85" rx="8" fill="#0A0A0A" stroke="#262626" stroke-width="1"/>
+        <text x="12" y="117" font-family="system-ui" font-size="10" fill="#a3a3a3">AI TRADING SIGNAL</text>
+        
+        <!-- BUY signal -->
+        <rect x="12" y="127" width="172" height="44" rx="6" fill="#22c55e" fill-opacity="0.15" stroke="#22c55e" stroke-opacity="0.3" stroke-width="1"/>
+        <text x="98" y="154" font-family="system-ui" font-size="18" fill="#22c55e" font-weight="bold" text-anchor="middle">BUY 📈</text>
+      </g>
+      
+      <!-- Bottom navigation tabs -->
+      <g transform="translate(0, 290)">
+        <rect x="0" y="0" width="140" height="36" rx="6" fill="#3b82f6" fill-opacity="0.15" stroke="#3b82f6" stroke-opacity="0.3"/>
+        <rect x="150" y="0" width="100" height="36" rx="6" fill="#171717"/>
+        <rect x="260" y="0" width="100" height="36" rx="6" fill="#171717"/>
+        <rect x="370" y="0" width="100" height="36" rx="6" fill="#171717"/>
+        <rect x="480" y="0" width="112" height="36" rx="6" fill="#171717"/>
+      </g>
+    </g>
+    
+    <!-- Subtle highlight on window edge -->
+    <rect x="1" y="1" width="638" height="478" rx="12" fill="none" stroke="#FFFFFF" stroke-opacity="0.05" stroke-width="1"/>
+  </g>
+  
+  <!-- Decorative sneaker icon -->
+  <text x="680" y="540" font-family="system-ui" font-size="60" fill="#171717" opacity="0.8">👟</text>
+  
+  <!-- Grain texture overlay -->
+  <filter id="noise">
+    <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="4" stitchTiles="stitch"/>
+    <feColorMatrix type="saturate" values="0"/>
+  </filter>
+  <rect width="800" height="600" fill="white" opacity="0.015" filter="url(#noise)"/>
+</svg>

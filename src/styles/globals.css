@@ -1,4 +1,4 @@
-@import "tailwindcss";
+@import 'tailwindcss';
 
 html {
   scroll-behavior: smooth;
@@ -23,7 +23,7 @@ html {
   }
 }
 
-[data-theme="dark"] {
+[data-theme='dark'] {
   --background: #000000;
   --foreground: #ffffff;
 }
@@ -31,12 +31,20 @@ html {
 body {
   background: #000000;
   color: var(--foreground);
-  font-family: system-ui, -apple-system, sans-serif;
+  font-family:
+    system-ui,
+    -apple-system,
+    sans-serif;
   font-weight: 400;
   letter-spacing: -0.01em;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-weight: 600;
   letter-spacing: -0.03em;
 }
@@ -62,7 +70,8 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Gradient animation */
 @keyframes gradient-x {
-  0%, 100% {
+  0%,
+  100% {
     background-size: 200% 200%;
     background-position: left center;
   }
@@ -89,3 +98,150 @@ h1, h2, h3, h4, h5, h6 {
     0 1px 0 rgba(0, 0, 255, 0.7),
     0 -1px 0 rgba(255, 255, 0, 0.7);
 }
+
+/* Print styles for CV - FORCED single A4 page */
+@media print {
+  @page {
+    size: A4 portrait;
+    margin: 5mm;
+  }
+
+  /* Force color printing */
+  * {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  /* Hide EVERYTHING not needed */
+  .no-print,
+  .fixed,
+  nav,
+  footer,
+  button,
+  [data-no-print],
+  .pointer-events-none {
+    display: none !important;
+  }
+
+  /* Reset html/body */
+  html, body {
+    width: 210mm !important;
+    height: 297mm !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    background: white !important;
+    color: black !important;
+    font-size: 7pt !important;
+    line-height: 1.2 !important;
+    overflow: hidden !important;
+  }
+
+  /* CV Container - SCALE to fit */
+  .cv-container {
+    transform: scale(0.5) !important;
+    transform-origin: top left !important;
+    width: 200% !important;
+    max-width: none !important;
+    margin: 0 !important;
+    padding: 8mm !important;
+    background: white !important;
+  }
+
+  /* Header - compact */
+  .cv-header {
+    margin-bottom: 8px !important;
+    padding: 0 !important;
+  }
+
+  .cv-header h1 {
+    font-size: 22pt !important;
+    line-height: 1.1 !important;
+    margin-bottom: 2px !important;
+    color: black !important;
+  }
+
+  .cv-header h1 span {
+    color: black !important;
+    background: none !important;
+    -webkit-background-clip: unset !important;
+    background-clip: unset !important;
+    -webkit-text-fill-color: black !important;
+  }
+
+  .cv-header p {
+    font-size: 10pt !important;
+    color: #333 !important;
+  }
+
+  /* Grid layout - 2 columns */
+  .cv-grid {
+    display: grid !important;
+    grid-template-columns: 35% 65% !important;
+    gap: 10px !important;
+  }
+
+  /* Card backgrounds - remove glass effect */
+  .cv-container [class*="rounded-2xl"],
+  .cv-container [class*="backdrop-blur"] {
+    background: #f5f5f5 !important;
+    border: 1px solid #ddd !important;
+    backdrop-filter: none !important;
+    padding: 8px !important;
+    margin-bottom: 6px !important;
+  }
+
+  /* Section headers */
+  .cv-container h2 {
+    font-size: 9pt !important;
+    margin-bottom: 4px !important;
+    color: #333 !important;
+  }
+
+  /* All text */
+  .cv-container p,
+  .cv-container span {
+    font-size: 8pt !important;
+    line-height: 1.3 !important;
+    color: #444 !important;
+  }
+
+  /* Hide animated skill bars */
+  .cv-container [class*="h-1.5"] {
+    display: none !important;
+  }
+
+  /* Tags */
+  .cv-container [class*="rounded-md"] {
+    font-size: 7pt !important;
+    padding: 2px 5px !important;
+    background: #eee !important;
+    color: #333 !important;
+  }
+
+  /* Timeline items */
+  .cv-container h4 {
+    font-size: 8pt !important;
+    font-weight: 600 !important;
+    color: #222 !important;
+  }
+
+  /* Background elements */
+  .cv-container .absolute {
+    display: none !important;
+  }
+
+  /* Prevent page breaks */
+  .cv-container * {
+    page-break-inside: avoid !important;
+    break-inside: avoid !important;
+  }
+
+  /* Remove shadows and transitions */
+  * {
+    box-shadow: none !important;
+    text-shadow: none !important;
+    animation: none !important;
+    transition: none !important;
+  }
+}
+

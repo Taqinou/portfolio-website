@@ -1,7 +1,7 @@
 'use client';
 
-import Image from "next/image";
-import { motion } from "framer-motion";
+import Image from 'next/image';
+import { motion } from 'framer-motion';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { texts } from '@/data/texts';
 import Button from '../ui/Button';
@@ -16,7 +16,7 @@ export default function HeroSection() {
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, ease: "easeOut" }}
+            transition={{ duration: 0.8, ease: 'easeOut' }}
           >
             <div className="relative inline-block mb-6 group">
               <div className="absolute inset-0 bg-white/[0.02] backdrop-blur-xl border border-white/[0.05] rounded-lg" />
@@ -40,7 +40,7 @@ export default function HeroSection() {
               transition={{ delay: 0.3, duration: 0.8 }}
               className="text-6xl md:text-8xl font-semibold mb-8 leading-[0.95] tracking-tight"
             >
-              {t.hiIm}{" "}
+              {t.hiIm}{' '}
               <span className="bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent animate-gradient-x">
                 Enzo
               </span>
@@ -72,29 +72,28 @@ export default function HeroSection() {
                 {t.getInTouch}
               </Button>
 
-              <Button href="/CV.pdf" variant="ghost" target="_blank" rel="noopener noreferrer">
-                {t.downloadCV}
+              <Button href="/cv" variant="ghost">
+                {t.cvViewInteractive}
               </Button>
             </div>
-
           </motion.div>
 
           <motion.div
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 1, ease: "easeOut", delay: 0.4 }}
+            transition={{ duration: 1, ease: 'easeOut', delay: 0.4 }}
             className="hidden md:flex justify-end"
           >
             <div className="relative w-[500px] h-[500px]">
               {/* Glow effect behind image */}
-              <div 
+              <div
                 className="absolute inset-0 rounded-full opacity-30"
                 style={{
                   background: 'radial-gradient(circle, rgba(255,255,255,0.2) 0%, transparent 70%)',
                   filter: 'blur(60px)',
                 }}
               />
-              
+
               {/* Image container with gradient overlay */}
               <div className="relative w-full h-full rounded-full overflow-hidden border border-neutral-800/50">
                 <Image

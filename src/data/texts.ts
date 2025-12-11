@@ -1,128 +1,299 @@
 export const texts = {
   fr: {
     // Hero Section
-    portfolio: "PORTFOLIO",
-    hiIm: "Salut, je suis",
-    juniorDeveloper: "Développeur Junior",
-    heroDescription: "Je suis un développeur junior français passionné par les jeux vidéo et la création de projets interactifs. J’aime développer des jeux Unity et des applications web qui captivent les utilisateurs. Curieux et motivé, je cherche toujours à explorer de nouvelles technologies pour améliorer mes compétences et partager ma passion.",
-    viewProjects: "Voir les Projets",
-    getInTouch: "Me Contacter",
-    downloadCV: "Télécharger CV",
-    scroll: "DÉFILER",
-    
+    portfolio: 'PORTFOLIO',
+    hiIm: 'Salut, je suis',
+    juniorDeveloper: 'Développeur Junior',
+    heroDescription:
+      'Je suis un développeur junior français passionné par les jeux vidéo et la création de projets interactifs. J’aime développer des jeux Unity et des applications web qui captivent les utilisateurs. Curieux et motivé, je cherche toujours à explorer de nouvelles technologies pour améliorer mes compétences et partager ma passion.',
+    viewProjects: 'Voir les Projets',
+    getInTouch: 'Me Contacter',
+    downloadCV: 'Télécharger CV',
+    scroll: 'DÉFILER',
+
     // Projects Section
-    projects: "PROJETS",
-    featuredWork: "Projets en Vedette",
-    
+    projects: 'PROJETS',
+    featuredWork: 'Projets en Vedette',
+
     // Contact Section
-    contact: "CONTACT",
-    letsWorkTogether: "Travaillons Ensemble",
-    contactDescription: "Vous avez un projet excitant ou vous voulez juste discuter ? Je suis toujours ouvert aux nouvelles opportunités et collaborations.",
-    sendEmail: "Envoyer un Email",
-    sendEmailDesc: "Message rapide via le formulaire de contact",
-    github: "GitHub",
-    githubDesc: "Consultez mes projets",
-    linkedin: "LinkedIn",
-    linkedinDesc: "Connectez-vous avec moi professionnellement",
-    fiverr: "Fiverr",
-    fiverrDesc: "Engagez-moi pour vos projets",
-    
+    contact: 'CONTACT',
+    letsWorkTogether: 'Travaillons Ensemble',
+    contactDescription:
+      'Vous avez un projet excitant ou vous voulez juste discuter ? Je suis toujours ouvert aux nouvelles opportunités et collaborations.',
+    sendEmail: 'Envoyer un Email',
+    sendEmailDesc: 'Message rapide via le formulaire de contact',
+    github: 'GitHub',
+    githubDesc: 'Consultez mes projets',
+    linkedin: 'LinkedIn',
+    linkedinDesc: 'Connectez-vous avec moi professionnellement',
+    fiverr: 'Fiverr',
+    fiverrDesc: 'Engagez-moi pour vos projets',
+
     // Contact Modal
-    letsConnect: "Restons en Contact",
-    contactModalDesc: "Envoyez-moi un message et je vous répondrai dès que possible !",
-    yourName: "Votre Nom",
-    yourEmail: "Votre Email",
-    message: "Message",
-    sendMessage: "Envoyer le Message",
-    sending: "Envoi...",
-    messageSent: "Message Envoyé !",
+    letsConnect: 'Restons en Contact',
+    contactModalDesc: 'Envoyez-moi un message et je vous répondrai dès que possible !',
+    yourName: 'Votre Nom',
+    yourEmail: 'Votre Email',
+    message: 'Message',
+    sendMessage: 'Envoyer le Message',
+    sending: 'Envoi...',
+    messageSent: 'Message Envoyé !',
     messageSuccess: "Merci de m'avoir contacté. Je vous répondrai bientôt !",
-    namePlaceholder: "Nom Prénom",
-    emailPlaceholder: "votre.email@exemple.com",
-    messagePlaceholder: "Parlez-moi de votre projet...",
-    
+    namePlaceholder: 'Nom Prénom',
+    emailPlaceholder: 'votre.email@exemple.com',
+    messagePlaceholder: 'Parlez-moi de votre projet...',
+
     // Project Modal
-    techStack: "Technologies",
-    play: "Jouer",
-    download: "Télécharger",
-    visitSite: "Visiter le Site",
-    finished: "Terminé",
-    inProgress: "En Cours",
-    
+    techStack: 'Technologies',
+    play: 'Jouer',
+    download: 'Télécharger',
+    visitSite: 'Visiter le Site',
+    finished: 'Terminé',
+    inProgress: 'En Cours',
+
     // Footer
-    builtWith: "Construit avec Next.js",
-    
+    builtWith: 'Construit avec Next.js',
+
     // Projects
-    projectPortfolioDesc: "Un portfolio moderne et interactif construit avec Next.js et React, avec une interface responsive. Présentant mes projets. Intégré avec Tailwind CSS et PostCSS pour le style, TypeScript pour la robustesse du code, Framer Motion pour des animations fluides, Radix UI pour des composants accessibles, Lucide React pour les icônes, clsx pour les classes utilitaires, Resend pour la fonctionnalité email, et ESLint pour la qualité du code.",
-    projectApartmentDesc: "Une application web full-stack développée lors de ma dernière année de Licence. La plateforme agrège les annonces d'appartements de plusieurs sites immobiliers dans une seule interface, aidant les utilisateurs à éviter de parcourir plusieurs sites séparément. Elle centralise les résultats, simplifie la comparaison et améliore l'expérience de recherche d'appartement.",
-    projectCalendarDesc: "Une application web de calendrier entièrement fonctionnelle construite lors de ma première année de Master. Elle permet aux utilisateurs de créer, modifier et gérer des événements de manière fluide avec une interface propre et intuitive.",
-    projectGameLibDesc: "Une ancienne application Java développée lors de ma deuxième année de Licence. Elle fonctionne comme une plateforme style Netflix mais pour les jeux, permettant aux utilisateurs de parcourir une grande base de données de jeux, lire des critiques, filtrer par catégories et découvrir des jeux similaires.",
-    projectPortfolioTitle: "Portfolio Web",
+    projectSneakerscopeTitle: 'SneakerScope',
+    projectSneakerscopeDesc:
+      'Plateforme d\'analyse de marché sneakers propulsée par l\'IA. Agrège des données en temps réel depuis plusieurs sources, génère un "Heat Score" unique combinant momentum financier (60%) et sentiment social (40%), et fournit des signaux de trading via Gemini AI. Inclut: portfolios utilisateurs, alertes de prix, abonnements Stripe, graphiques interactifs.',
+    projectPortfolioDesc:
+      'Un portfolio moderne et interactif construit avec Next.js et React, avec une interface responsive. Présentant mes projets. Intégré avec Tailwind CSS et PostCSS pour le style, TypeScript pour la robustesse du code, Framer Motion pour des animations fluides, Radix UI pour des composants accessibles, Lucide React pour les icônes, clsx pour les classes utilitaires, Resend pour la fonctionnalité email, et ESLint pour la qualité du code.',
+    projectApartmentDesc:
+      "Une application web full-stack développée lors de ma dernière année de Licence. La plateforme agrège les annonces d'appartements de plusieurs sites immobiliers dans une seule interface, aidant les utilisateurs à éviter de parcourir plusieurs sites séparément. Elle centralise les résultats, simplifie la comparaison et améliore l'expérience de recherche d'appartement.",
+    projectCalendarDesc:
+      'Une application web de calendrier entièrement fonctionnelle construite lors de ma première année de Master. Elle permet aux utilisateurs de créer, modifier et gérer des événements de manière fluide avec une interface propre et intuitive.',
+    projectGameLibDesc:
+      'Une ancienne application Java développée lors de ma deuxième année de Licence. Elle fonctionne comme une plateforme style Netflix mais pour les jeux, permettant aux utilisateurs de parcourir une grande base de données de jeux, lire des critiques, filtrer par catégories et découvrir des jeux similaires.',
+    projectPortfolioTitle: 'Portfolio Web',
     projectApartmentTitle: "Application d'Agrégation d'Appartements",
-    projectCalendarTitle: "Calendrier Fonctionnel",
-    projectGameLibTitle: "Bibliothèque de Jeux",
+    projectCalendarTitle: 'Calendrier Fonctionnel',
+    projectGameLibTitle: 'Bibliothèque de Jeux',
+
+    // CV Page
+    cvTitle: 'Curriculum Vitae',
+    cvSubtitle: 'Développeur Fullstack Junior',
+    cvDownloadPdf: 'Télécharger PDF',
+    cvViewInteractive: 'Voir CV',
+    cvBackToPortfolio: 'Retour au Portfolio',
+
+    // CV Profile
+    cvProfileTitle: 'Profil Personnel',
+    cvProfileText:
+      "Développeur Fullstack passionné par le développement web moderne. Diplômé d'une Licence en Informatique, je conçois des applications web complètes, du frontend (React, Next.js, TypeScript) au backend (Node.js, FastAPI, bases de données). Curieux et motivé, j'aime créer des expériences utilisateur fluides et des architectures robustes. Toujours en veille technologique, j'apprécie relever de nouveaux défis techniques.",
+
+    // CV Education
+    cvEducationTitle: 'Parcours Scolaire',
+    cvEducation1Title: 'Licence Informatique',
+    cvEducation1School: 'Institut National Universitaire Champollion',
+    cvEducation1Date: 'Diplômé en 2025',
+    cvEducation2Title: 'Baccalauréat Général',
+    cvEducation2School: 'Lycée Claude Gellée / Lycée Paul Sabatier',
+    cvEducation2Date: "Diplômé en 2022 - Mention 'Assez Bien'",
+
+    // CV Experience
+    cvExperienceTitle: 'Expérience Professionnelle',
+    cvExp1Title: 'Stage de Parcours',
+    cvExp1Company: 'INU Champollion (81000 Albi)',
+    cvExp1Date: 'Deux semaines - 2024',
+    cvExp1Desc:
+      "Création d'une application en Python permettant d'automatiser la conversion de fichiers Excel en PDF.",
+    cvExp2Title: 'Plongeur en Restauration',
+    cvExp2Company: 'La Table de Valmy (66700 Argelès-sur-Mer)',
+    cvExp2Date: 'Mi-juillet - début septembre',
+    cvExp2Desc:
+      "Pendant mon emploi, j'ai démontré ma capacité à travailler efficacement en équipe et sous pression, en assurant le nettoyage et l'entretien des ustensiles et de l'environnement de travail.",
+    cvExp3Title: 'Réparateur Informatique',
+    cvExp3Company: 'ADP 88 Informatique (88190 Golbey)',
+    cvExp3Date: 'Une semaine - 2018',
+    cvExp3Desc:
+      "Durant ce stage, j'ai pu développer des compétences dans le domaine de l'architecture d'un ordinateur et son fonctionnement, j'ai donc pu réparer mais aussi assembler des ordinateurs.",
+
+    // CV Skills
+    cvSkillsTitle: 'Compétences et Savoir-Faire',
+    cvSkillsLanguages: 'Frontend',
+    cvSkillsLanguagesList: 'React, Next.js, TypeScript, Tailwind CSS, Framer Motion',
+    cvSkillsEngine: 'Backend',
+    cvSkillsEngineList: 'Node.js, FastAPI, Python, REST APIs, PostgreSQL, Redis',
+    cvSkillsTools: 'Outils',
+    cvSkillsToolsList: 'Git, VS Code, Docker, Vercel, Postman',
+    cvSkillsOther: 'Autres',
+    cvSkillsOtherList: 'Architecture logicielle, automatisation, CI/CD, responsive design',
+    cvSkillsSpokenLanguages: 'Langues',
+    cvSkillsSpokenLanguagesList: 'Anglais technique (lu, écrit, parlé)',
+
+    // CV Projects
+    cvProjectsTitle: 'Projets',
+    cvProject1Title: 'SneakerScope',
+    cvProject1Tech: 'FastAPI • Next.js • PostgreSQL • Redis • Stripe',
+    cvProject1Desc:
+      'Plateforme d\'analyse de marché sneakers avec IA. Agrège des données en temps réel, génère un "Heat Score" combinant momentum financier et sentiment social, et fournit des signaux de trading (BUY/SELL/HOLD) via Gemini AI.',
+    cvProject1Status: 'En cours',
+
+    // CV Interests
+    cvInterestsTitle: 'Intérêts et Loisirs',
+    cvInterest1Title: 'Jeux Vidéo',
+    cvInterest1Desc:
+      'Passionné de jeux vidéo, je consacre beaucoup de temps à explorer les dernières tendances et à jouer aux jeux les plus récents.',
+    cvInterest2Title: 'Programmation',
+    cvInterest2Desc:
+      'Je porte un assez grand intérêt pour la programmation informatique et je passe de nombreuses heures à développer des projets personnels.',
+    cvInterest3Title: 'Football',
+    cvInterest3Desc:
+      'Passionné de football, je suis un grand fan des compétitions nationales et internationales.',
+
+    // CV Contact
+    cvContactTitle: 'Coordonnées',
+    cvContactEmail: 'enzo.gazzoli@icloud.com',
+    cvContactLocation: '54000 Nancy',
   },
   en: {
     // Hero Section
-    portfolio: "PORTFOLIO",
+    portfolio: 'PORTFOLIO',
     hiIm: "Hi, I'm",
-    juniorDeveloper: "Junior Developer",
-    heroDescription: "I'm a french junior developer passionate about video games and interactive experiences. I enjoy creating engaging and immersive projects, whether it's Unity games or web applications. Curious and motivated, I'm always eager to learn new technologies to improve my skills and share my passion.",
-    viewProjects: "View Projects",
-    getInTouch: "Get in Touch",
-    downloadCV: "Download CV",
-    scroll: "SCROLL",
-    
+    juniorDeveloper: 'Junior Developer',
+    heroDescription:
+      "I'm a french junior developer passionate about video games and interactive experiences. I enjoy creating engaging and immersive projects, whether it's Unity games or web applications. Curious and motivated, I'm always eager to learn new technologies to improve my skills and share my passion.",
+    viewProjects: 'View Projects',
+    getInTouch: 'Get in Touch',
+    downloadCV: 'Download CV',
+    scroll: 'SCROLL',
+
     // Projects Section
-    projects: "PROJECTS",
-    featuredWork: "Featured Work",
-    
+    projects: 'PROJECTS',
+    featuredWork: 'Featured Work',
+
     // Contact Section
-    contact: "CONTACT",
+    contact: 'CONTACT',
     letsWorkTogether: "Let's Work Together",
-    contactDescription: "Have an exciting project or just want to chat? I'm always open to new opportunities and collaborations.",
-    sendEmail: "Send Email",
-    sendEmailDesc: "Quick message through contact form",
-    github: "GitHub",
-    githubDesc: "Check out my projects",
-    linkedin: "LinkedIn",
-    linkedinDesc: "Connect with me professionally",
-    fiverr: "Fiverr",
-    fiverrDesc: "Hire me for your projects",
-    
+    contactDescription:
+      "Have an exciting project or just want to chat? I'm always open to new opportunities and collaborations.",
+    sendEmail: 'Send Email',
+    sendEmailDesc: 'Quick message through contact form',
+    github: 'GitHub',
+    githubDesc: 'Check out my projects',
+    linkedin: 'LinkedIn',
+    linkedinDesc: 'Connect with me professionally',
+    fiverr: 'Fiverr',
+    fiverrDesc: 'Hire me for your projects',
+
     // Contact Modal
     letsConnect: "Let's Connect",
     contactModalDesc: "Send me a message and I'll respond as soon as possible!",
-    yourName: "Your Name",
-    yourEmail: "Your Email",
-    message: "Message",
-    sendMessage: "Send Message",
-    sending: "Sending...",
-    messageSent: "Message Sent!",
+    yourName: 'Your Name',
+    yourEmail: 'Your Email',
+    message: 'Message',
+    sendMessage: 'Send Message',
+    sending: 'Sending...',
+    messageSent: 'Message Sent!',
     messageSuccess: "Thanks for reaching out. I'll get back to you soon!",
-    namePlaceholder: "Name Firstname",
-    emailPlaceholder: "your.email@example.com",
-    messagePlaceholder: "Tell me about your project...",
-    
+    namePlaceholder: 'Name Firstname',
+    emailPlaceholder: 'your.email@example.com',
+    messagePlaceholder: 'Tell me about your project...',
+
     // Project Modal
-    techStack: "Tech Stack",
-    play: "Play",
-    download: "Download",
-    visitSite: "Visit Site",
-    finished: "Finished",
-    inProgress: "In Progress",
-    
+    techStack: 'Tech Stack',
+    play: 'Play',
+    download: 'Download',
+    visitSite: 'Visit Site',
+    finished: 'Finished',
+    inProgress: 'In Progress',
+
     // Footer
-    builtWith: "Built with Next.js",
-    
+    builtWith: 'Built with Next.js',
+
     // Projects
-    projectPortfolioDesc: "A modern and interactive portfolio built with Next.js and React, featuring a responsive interface. Showcasing my projects. Integrated with Tailwind CSS and PostCSS for styling, TypeScript for code robustness, Framer Motion for smooth animations, Radix UI for accessible components, Lucide React for icons, clsx for utility classes, Resend for email functionality, and ESLint for code quality.",
-    projectApartmentDesc: "A full-stack web application built during my final year of Bachelor's degree. The platform aggregates apartment listings from multiple real-estate websites into a single interface, helping users avoid browsing several sites separately. It centralizes results, simplifies comparison, and improves the apartment-hunting experience.",
-    projectCalendarDesc: "A fully functional calendar web application built during my first year of Master's studies. It allows users to create, edit, and manage events seamlessly with a clean and intuitive interface.",
-    projectGameLibDesc: "An old Java application developed during my second year of undergraduate studies. It functions like a Netflix-style platform but for games, allowing users to browse a large database of games, read reviews, filter by categories, and discover similar games.",
-    projectPortfolioTitle: "Web Portfolio",
-    projectApartmentTitle: "Apartment Aggregator Web App",
-    projectCalendarTitle: "Functional Calendar",
-    projectGameLibTitle: "Game Library App",
+    projectSneakerscopeTitle: 'SneakerScope',
+    projectSneakerscopeDesc:
+      'AI-powered sneaker market analytics platform. Aggregates real-time data from multiple sources, generates a unique "Heat Score" combining financial momentum (60%) and social sentiment (40%), and provides trading signals via Gemini AI. Features: user portfolios, price alerts, Stripe subscriptions, interactive charts.',
+    projectPortfolioDesc:
+      'A modern and interactive portfolio built with Next.js and React, featuring a responsive interface. Showcasing my projects. Integrated with Tailwind CSS and PostCSS for styling, TypeScript for code robustness, Framer Motion for smooth animations, Radix UI for accessible components, Lucide React for icons, clsx for utility classes, Resend for email functionality, and ESLint for code quality.',
+    projectApartmentDesc:
+      "A full-stack web application built during my final year of Bachelor's degree. The platform aggregates apartment listings from multiple real-estate websites into a single interface, helping users avoid browsing several sites separately. It centralizes results, simplifies comparison, and improves the apartment-hunting experience.",
+    projectCalendarDesc:
+      "A fully functional calendar web application built during my first year of Master's studies. It allows users to create, edit, and manage events seamlessly with a clean and intuitive interface.",
+    projectGameLibDesc:
+      'An old Java application developed during my second year of undergraduate studies. It functions like a Netflix-style platform but for games, allowing users to browse a large database of games, read reviews, filter by categories, and discover similar games.',
+    projectPortfolioTitle: 'Web Portfolio',
+    projectApartmentTitle: 'Apartment Aggregator Web App',
+    projectCalendarTitle: 'Functional Calendar',
+    projectGameLibTitle: 'Game Library App',
+
+    // CV Page
+    cvTitle: 'Curriculum Vitae',
+    cvSubtitle: 'Junior Fullstack Developer',
+    cvDownloadPdf: 'Download PDF',
+    cvViewInteractive: 'View CV',
+    cvBackToPortfolio: 'Back to Portfolio',
+
+    // CV Profile
+    cvProfileTitle: 'Personal Profile',
+    cvProfileText:
+      "Fullstack Developer passionate about modern web development. With a Bachelor's degree in Computer Science, I design complete web applications from frontend (React, Next.js, TypeScript) to backend (Node.js, FastAPI, databases). Curious and driven, I love creating smooth user experiences and robust architectures. Always keeping up with the latest technologies, I enjoy tackling new technical challenges.",
+
+    // CV Education
+    cvEducationTitle: 'Education',
+    cvEducation1Title: "Bachelor's Degree in Computer Science",
+    cvEducation1School: 'Institut National Universitaire Champollion',
+    cvEducation1Date: 'Graduated in 2025',
+    cvEducation2Title: 'High School Diploma',
+    cvEducation2School: 'Lycée Claude Gellée / Lycée Paul Sabatier',
+    cvEducation2Date: 'Graduated in 2022 - With Honors',
+
+    // CV Experience
+    cvExperienceTitle: 'Professional Experience',
+    cvExp1Title: 'Academic Internship',
+    cvExp1Company: 'INU Champollion (81000 Albi)',
+    cvExp1Date: 'Two weeks - 2024',
+    cvExp1Desc: 'Created a Python application to automate the conversion of Excel files to PDF.',
+    cvExp2Title: 'Dishwasher',
+    cvExp2Company: 'La Table de Valmy (66700 Argelès-sur-Mer)',
+    cvExp2Date: 'Mid-July - Early September',
+    cvExp2Desc:
+      'During my employment, I demonstrated my ability to work effectively as a team and under pressure, ensuring the cleaning and maintenance of utensils and the work environment.',
+    cvExp3Title: 'IT Technician',
+    cvExp3Company: 'ADP 88 Informatique (88190 Golbey)',
+    cvExp3Date: 'One week - 2018',
+    cvExp3Desc:
+      'During this internship, I developed skills in computer architecture and operation, learning to repair and assemble computers.',
+
+    // CV Skills
+    cvSkillsTitle: 'Skills & Expertise',
+    cvSkillsLanguages: 'Frontend',
+    cvSkillsLanguagesList: 'React, Next.js, TypeScript, Tailwind CSS, Framer Motion',
+    cvSkillsEngine: 'Backend',
+    cvSkillsEngineList: 'Node.js, FastAPI, Python, REST APIs, PostgreSQL, Redis',
+    cvSkillsTools: 'Tools',
+    cvSkillsToolsList: 'Git, VS Code, Docker, Vercel, Postman',
+    cvSkillsOther: 'Other',
+    cvSkillsOtherList: 'Software architecture, automation, CI/CD, responsive design',
+    cvSkillsSpokenLanguages: 'Languages',
+    cvSkillsSpokenLanguagesList: 'Technical English (reading, writing, speaking)',
+
+    // CV Projects
+    cvProjectsTitle: 'Projects',
+    cvProject1Title: 'SneakerScope',
+    cvProject1Tech: 'FastAPI • Next.js • PostgreSQL • Redis • Stripe',
+    cvProject1Desc:
+      'AI-powered sneaker market analytics platform. Aggregates real-time data, generates a "Heat Score" combining financial momentum and social sentiment, and provides trading signals (BUY/SELL/HOLD) via Gemini AI.',
+    cvProject1Status: 'In Progress',
+
+    // CV Interests
+    cvInterestsTitle: 'Interests & Hobbies',
+    cvInterest1Title: 'Video Games',
+    cvInterest1Desc:
+      'Passionate about video games, I spend a lot of time exploring the latest trends and playing the most recent games.',
+    cvInterest2Title: 'Programming',
+    cvInterest2Desc:
+      'I have a strong interest in computer programming and spend many hours developing personal projects.',
+    cvInterest3Title: 'Football',
+    cvInterest3Desc:
+      'Passionate about football, I am a big fan of national and international competitions.',
+
+    // CV Contact
+    cvContactTitle: 'Contact',
+    cvContactEmail: 'enzo.gazzoli@icloud.com',
+    cvContactLocation: '54000 Nancy, France',
   },
 } as const;
