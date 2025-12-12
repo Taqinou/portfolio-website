@@ -3,6 +3,154 @@
 import { useLanguage } from '@/contexts/LanguageContext';
 import { texts } from '@/data/texts';
 
+// SVG Icon Components for PDF (inline, no external dependencies)
+const IconSparkles = () => (
+  <svg
+    width="14"
+    height="14"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="2"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+  >
+    <path d="M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .963 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.581a.5.5 0 0 1 0 .964L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.963 0z" />
+  </svg>
+);
+
+const IconMail = () => (
+  <svg
+    width="12"
+    height="12"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="2"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+  >
+    <rect width="20" height="16" x="2" y="4" rx="2" />
+    <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
+  </svg>
+);
+
+const IconMapPin = () => (
+  <svg
+    width="12"
+    height="12"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="2"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+  >
+    <path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0" />
+    <circle cx="12" cy="10" r="3" />
+  </svg>
+);
+
+const IconContact = () => (
+  <svg
+    width="14"
+    height="14"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="2"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+  >
+    <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
+  </svg>
+);
+
+const IconCode = () => (
+  <svg
+    width="14"
+    height="14"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="2"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+  >
+    <path d="m18 16 4-4-4-4" />
+    <path d="m6 8-4 4 4 4" />
+    <path d="m14.5 4-5 16" />
+  </svg>
+);
+
+const IconTarget = () => (
+  <svg
+    width="14"
+    height="14"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="2"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+  >
+    <circle cx="12" cy="12" r="10" />
+    <circle cx="12" cy="12" r="6" />
+    <circle cx="12" cy="12" r="2" />
+  </svg>
+);
+
+const IconGraduation = () => (
+  <svg
+    width="14"
+    height="14"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="2"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+  >
+    <path d="M21.42 10.922a1 1 0 0 0-.019-1.838L12.83 5.18a2 2 0 0 0-1.66 0L2.6 9.08a1 1 0 0 0 0 1.832l8.57 3.908a2 2 0 0 0 1.66 0z" />
+    <path d="M22 10v6" />
+    <path d="M6 12.5V16a6 3 0 0 0 12 0v-3.5" />
+  </svg>
+);
+
+const IconBriefcase = () => (
+  <svg
+    width="14"
+    height="14"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="2"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+  >
+    <path d="M16 20V4a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16" />
+    <rect width="20" height="14" x="2" y="6" rx="2" />
+  </svg>
+);
+
+const IconRocket = () => (
+  <svg
+    width="14"
+    height="14"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="2"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+  >
+    <path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z" />
+    <path d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z" />
+    <path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0" />
+    <path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5" />
+  </svg>
+);
+
 export default function CVPrintPage() {
   const { lang } = useLanguage();
   const t = texts[lang];
@@ -43,7 +191,7 @@ export default function CVPrintPage() {
         margin: '0 auto',
         padding: '8mm 10mm',
         background:
-          'linear-gradient(135deg, rgb(10, 10, 15) 0%, rgb(15, 15, 25) 50%, rgb(10, 10, 20) 100%)',
+          'linear-gradient(135deg, rgb(5, 5, 5) 0%, rgb(10, 10, 10) 50%, rgb(5, 5, 8) 100%)',
         color: 'rgb(255, 255, 255)',
         fontFamily: 'system-ui, -apple-system, sans-serif',
         fontSize: '8pt',
@@ -61,7 +209,7 @@ export default function CVPrintPage() {
           left: '15%',
           width: '300px',
           height: '300px',
-          background: 'radial-gradient(circle, rgba(59, 130, 246, 0.12) 0%, transparent 70%)',
+          background: 'radial-gradient(circle, rgba(148, 163, 184, 0.1) 0%, transparent 70%)',
           borderRadius: '50%',
           pointerEvents: 'none',
         }}
@@ -73,7 +221,7 @@ export default function CVPrintPage() {
           right: '5%',
           width: '280px',
           height: '280px',
-          background: 'radial-gradient(circle, rgba(168, 85, 247, 0.1) 0%, transparent 70%)',
+          background: 'radial-gradient(circle, rgba(167, 139, 250, 0.08) 0%, transparent 70%)',
           borderRadius: '50%',
           pointerEvents: 'none',
         }}
@@ -109,11 +257,8 @@ export default function CVPrintPage() {
           <span style={{ color: 'rgb(255, 255, 255)' }}>GAZZOLI </span>
           <span
             style={{
-              background:
-                'linear-gradient(90deg, rgb(96, 165, 250), rgb(192, 132, 252), rgb(244, 114, 182))',
-              WebkitBackgroundClip: 'text',
-              WebkitTextFillColor: 'transparent',
-              backgroundClip: 'text',
+              color: 'rgb(255, 255, 255)',
+              fontWeight: '300',
             }}
           >
             ENZO
@@ -133,7 +278,9 @@ export default function CVPrintPage() {
 
       {/* Profile Card */}
       <div style={cardStyle}>
-        <h2 style={sectionTitleStyle}>✨ {t.cvProfileTitle}</h2>
+        <h2 style={sectionTitleStyle}>
+          <IconSparkles /> {t.cvProfileTitle}
+        </h2>
         <p
           style={{ margin: 0, fontSize: '8.5pt', color: 'rgb(212, 212, 212)', lineHeight: '1.45' }}
         >
@@ -149,20 +296,28 @@ export default function CVPrintPage() {
         <div style={{ width: '32%', display: 'flex', flexDirection: 'column', gap: '4mm' }}>
           {/* Contact Card */}
           <div style={cardStyle}>
-            <h2 style={sectionTitleStyle}>📬 {t.cvContactTitle}</h2>
-            <p style={itemStyle}>✉️ {t.cvContactEmail}</p>
-            <p style={itemStyle}>📍 {t.cvContactLocation}</p>
+            <h2 style={sectionTitleStyle}>
+              <IconContact /> {t.cvContactTitle}
+            </h2>
+            <p style={{ ...itemStyle, display: 'flex', alignItems: 'center', gap: '2mm' }}>
+              <IconMail /> {t.cvContactEmail}
+            </p>
+            <p style={{ ...itemStyle, display: 'flex', alignItems: 'center', gap: '2mm' }}>
+              <IconMapPin /> {t.cvContactLocation}
+            </p>
           </div>
 
           {/* Skills Card */}
           <div style={cardStyle}>
-            <h2 style={sectionTitleStyle}>💻 {t.cvSkillsTitle}</h2>
+            <h2 style={sectionTitleStyle}>
+              <IconCode /> {t.cvSkillsTitle}
+            </h2>
             {skills.map((skill, i) => (
               <div key={i} style={{ marginBottom: '2.5mm' }}>
                 <strong
                   style={{
                     fontSize: '7.5pt',
-                    color: 'rgb(96, 165, 250)',
+                    color: 'rgb(212, 212, 212)',
                     textTransform: 'uppercase',
                     letterSpacing: '0.3px',
                   }}
@@ -185,7 +340,9 @@ export default function CVPrintPage() {
 
           {/* Interests Card */}
           <div style={cardStyle}>
-            <h2 style={sectionTitleStyle}>🎯 {t.cvInterestsTitle}</h2>
+            <h2 style={sectionTitleStyle}>
+              <IconTarget /> {t.cvInterestsTitle}
+            </h2>
             {interests.map((interest, i) => (
               <div key={i} style={{ marginBottom: '2mm' }}>
                 <strong style={{ fontSize: '7.5pt', color: 'rgb(212, 212, 212)' }}>
@@ -210,7 +367,9 @@ export default function CVPrintPage() {
         <div style={{ width: '68%', display: 'flex', flexDirection: 'column', gap: '4mm' }}>
           {/* Education Card */}
           <div style={cardStyle}>
-            <h2 style={sectionTitleStyle}>🎓 {t.cvEducationTitle}</h2>
+            <h2 style={sectionTitleStyle}>
+              <IconGraduation /> {t.cvEducationTitle}
+            </h2>
             {education.map((edu, i) => (
               <div key={i} style={timelineItemStyle}>
                 <div style={timelineDotStyle} />
@@ -229,47 +388,18 @@ export default function CVPrintPage() {
             ))}
           </div>
 
-          {/* Experience Card */}
-          <div style={cardStyle}>
-            <h2 style={sectionTitleStyle}>💼 {t.cvExperienceTitle}</h2>
-            {experiences.map((exp, i) => (
-              <div key={i} style={timelineItemStyle}>
-                <div style={timelineDotStyle} />
-                <strong style={{ fontSize: '9pt', color: 'rgb(255, 255, 255)' }}>
-                  {exp.title}
-                </strong>
-                <p
-                  style={{ margin: '0.5mm 0 0 0', fontSize: '7.5pt', color: 'rgb(163, 163, 163)' }}
-                >
-                  {exp.company}
-                </p>
-                <p style={{ margin: '0.5mm 0 0 0', fontSize: '7pt', color: 'rgb(82, 82, 82)' }}>
-                  {exp.date}
-                </p>
-                <p
-                  style={{
-                    margin: '1mm 0 0 0',
-                    fontSize: '7pt',
-                    color: 'rgb(115, 115, 115)',
-                    lineHeight: '1.4',
-                  }}
-                >
-                  {exp.desc}
-                </p>
-              </div>
-            ))}
-          </div>
-
           {/* Projects Card */}
           <div style={cardStyle}>
-            <h2 style={sectionTitleStyle}>🚀 {t.cvProjectsTitle}</h2>
+            <h2 style={sectionTitleStyle}>
+              <IconRocket /> {t.cvProjectsTitle}
+            </h2>
             <div
               style={{
                 padding: '4mm',
                 background:
-                  'linear-gradient(135deg, rgba(59, 130, 246, 0.08) 0%, rgba(168, 85, 247, 0.08) 100%)',
+                  'linear-gradient(135deg, rgba(148, 163, 184, 0.06) 0%, rgba(167, 139, 250, 0.04) 100%)',
                 borderRadius: '3mm',
-                border: '1px solid rgba(59, 130, 246, 0.2)',
+                border: '1px solid rgba(148, 163, 184, 0.15)',
               }}
             >
               <div
@@ -281,10 +411,10 @@ export default function CVPrintPage() {
                 <span
                   style={{
                     fontSize: '6.5pt',
-                    color: 'rgb(96, 165, 250)',
+                    color: 'rgb(148, 163, 184)',
                     padding: '1mm 2.5mm',
-                    background: 'rgba(59, 130, 246, 0.15)',
-                    border: '1px solid rgba(59, 130, 246, 0.3)',
+                    background: 'rgba(148, 163, 184, 0.12)',
+                    border: '1px solid rgba(148, 163, 184, 0.25)',
                     borderRadius: '2mm',
                     fontWeight: '500',
                   }}
@@ -313,6 +443,39 @@ export default function CVPrintPage() {
                 {t.cvProject1Desc}
               </p>
             </div>
+          </div>
+
+          {/* Experience Card */}
+          <div style={cardStyle}>
+            <h2 style={sectionTitleStyle}>
+              <IconBriefcase /> {t.cvExperienceTitle}
+            </h2>
+            {experiences.map((exp, i) => (
+              <div key={i} style={timelineItemStyle}>
+                <div style={timelineDotStyle} />
+                <strong style={{ fontSize: '9pt', color: 'rgb(255, 255, 255)' }}>
+                  {exp.title}
+                </strong>
+                <p
+                  style={{ margin: '0.5mm 0 0 0', fontSize: '7.5pt', color: 'rgb(163, 163, 163)' }}
+                >
+                  {exp.company}
+                </p>
+                <p style={{ margin: '0.5mm 0 0 0', fontSize: '7pt', color: 'rgb(82, 82, 82)' }}>
+                  {exp.date}
+                </p>
+                <p
+                  style={{
+                    margin: '1mm 0 0 0',
+                    fontSize: '7pt',
+                    color: 'rgb(115, 115, 115)',
+                    lineHeight: '1.4',
+                  }}
+                >
+                  {exp.desc}
+                </p>
+              </div>
+            ))}
           </div>
         </div>
       </div>
@@ -371,7 +534,7 @@ const itemStyle: React.CSSProperties = {
 const timelineItemStyle: React.CSSProperties = {
   marginBottom: '3.5mm',
   paddingLeft: '4mm',
-  borderLeft: '2px solid rgba(59, 130, 246, 0.35)',
+  borderLeft: '2px solid rgba(148, 163, 184, 0.3)',
   position: 'relative',
 };
 
@@ -382,6 +545,6 @@ const timelineDotStyle: React.CSSProperties = {
   width: '6px',
   height: '6px',
   borderRadius: '50%',
-  background: 'rgb(59, 130, 246)',
-  boxShadow: '0 0 6px rgba(59, 130, 246, 0.5)',
+  background: 'rgb(148, 163, 184)',
+  boxShadow: '0 0 6px rgba(148, 163, 184, 0.5)',
 };

@@ -377,25 +377,6 @@ export default function CVPage() {
               </GlassCard3D>
             </motion.section>
 
-            {/* Experience */}
-            <motion.section variants={itemVariants}>
-              <GlassCard3D>
-                <SectionHeader icon={Briefcase} title={t.cvExperienceTitle} />
-                <div className="space-y-6">
-                  {experiences.map((exp, i) => (
-                    <TimelineItem
-                      key={i}
-                      title={exp.title}
-                      subtitle={exp.company}
-                      date={exp.date}
-                      description={exp.desc}
-                      isLast={i === experiences.length - 1}
-                    />
-                  ))}
-                </div>
-              </GlassCard3D>
-            </motion.section>
-
             {/* Projects */}
             <motion.section variants={itemVariants}>
               <GlassCard3D>
@@ -419,6 +400,25 @@ export default function CVPage() {
                         {project.desc}
                       </p>
                     </div>
+                  ))}
+                </div>
+              </GlassCard3D>
+            </motion.section>
+
+            {/* Experience */}
+            <motion.section variants={itemVariants}>
+              <GlassCard3D>
+                <SectionHeader icon={Briefcase} title={t.cvExperienceTitle} />
+                <div className="space-y-6">
+                  {experiences.map((exp, i) => (
+                    <TimelineItem
+                      key={i}
+                      title={exp.title}
+                      subtitle={exp.company}
+                      date={exp.date}
+                      description={exp.desc}
+                      isLast={i === experiences.length - 1}
+                    />
                   ))}
                 </div>
               </GlassCard3D>

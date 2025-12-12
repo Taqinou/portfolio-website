@@ -14,6 +14,7 @@ A modern and interactive portfolio built with **Next.js 16** and **React 19**, f
 - 📱 **Fully responsive** design
 - ♿ **Accessible components** with Radix UI
 - 📧 **Contact form** integrated with Resend API
+- 📄 **Interactive CV** with PDF export functionality
 - 🎯 **SEO optimized** with Next.js metadata
 - ⚡ **Fast performance** with Next.js App Router
 
@@ -28,6 +29,7 @@ A modern and interactive portfolio built with **Next.js 16** and **React 19**, f
 - **Icons:** [Lucide React](https://lucide.dev/)
 - **Utilities:** [clsx](https://github.com/lukeed/clsx)
 - **Email Service:** [Resend](https://resend.com/)
+- **PDF Export:** [html2canvas](https://html2canvas.hertzen.com/), [jsPDF](https://github.com/parallax/jsPDF)
 - **Linting:** ESLint 9
 
 ## 📋 Prerequisites
@@ -100,6 +102,7 @@ This project is optimized for deployment on [Vercel](https://vercel.com/):
 ### Other platforms
 
 You can also deploy on:
+
 - **Netlify:** Configure build command as `npm run build` and publish directory as `.next`
 - **Railway/Render:** Use the provided Dockerfile (if created)
 
@@ -120,10 +123,16 @@ portfolio-website/
 │   ├── app/                  # Next.js App Router
 │   │   ├── api/              # API routes
 │   │   │   └── contact/      # Contact form API
+│   │   ├── cv/               # CV pages
+│   │   │   ├── page.tsx      # Interactive CV page
+│   │   │   └── print/        # Print-optimized CV page
 │   │   ├── layout.tsx        # Root layout
 │   │   └── page.tsx          # Home page
 │   │
 │   ├── components/           # React components
+│   │   ├── cv/               # CV-specific components
+│   │   │   └── CVPage.tsx    # Interactive CV component
+│   │   │
 │   │   ├── features/         # Feature-specific components
 │   │   │   ├── LanguageSwitch.tsx
 │   │   │   ├── ProjectCard.tsx
@@ -165,6 +174,7 @@ portfolio-website/
 │   └── types/                # TypeScript type definitions
 │       ├── contact.ts        # Contact form types
 │       ├── language.ts       # Language/i18n types
+│       ├── pdf.d.ts          # PDF generation types
 │       └── project.ts        # Project types
 │
 ├── .env.local                # Environment variables (gitignored)
@@ -180,31 +190,47 @@ portfolio-website/
 
 ### Component Organization
 
+#### **cv/** - CV Components
+
+Components for the interactive curriculum vitae:
+
+- `CVPage`: Full interactive CV with 3D effects, animations, and PDF export
+
 #### **features/** - Feature Components
+
 Components that provide specific functionality:
+
 - `LanguageSwitch`: Language switcher (FR/EN)
 - `ProjectCard`: Individual project card display
 - `ScrollReveal`: Scroll-triggered animations wrapper
 
 #### **layout/** - Layout Components
+
 Components that structure the page:
-- `BackgroundCanvas`: Animated background
+
+- `BackgroundCanvas`: Animated background with gradient lights
 - `Footer`: Site footer
 - `ScrollToTopButton`: Back to top functionality
 
 #### **modals/** - Modal Dialogs
+
 Full-screen overlay components:
+
 - `ContactModal`: Contact form modal
 - `ProjectModal`: Detailed project view
 
 #### **sections/** - Page Sections
+
 Main content sections of the homepage:
-- `HeroSection`: Hero/landing section
-- `ProjectsSection`: Projects showcase
-- `ContactSection`: Contact information
+
+- `HeroSection`: Hero/landing section with profile
+- `ProjectsSection`: Projects showcase grid
+- `ContactSection`: Contact information cards
 
 #### **ui/** - Reusable UI Components
+
 Generic, reusable UI elements:
+
 - `Button`: Styled button/link component
 - `ContactCard`: Contact method card
 - `SectionHeader`: Section title with label
