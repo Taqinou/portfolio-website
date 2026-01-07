@@ -113,23 +113,23 @@ export const texts = {
     // CV Skills
     cvSkillsTitle: 'Compétences et Savoir-Faire',
     cvSkillsLanguages: 'Frontend',
-    cvSkillsLanguagesList: 'React, Next.js, TypeScript, Tailwind CSS, Framer Motion',
+    cvSkillsLanguagesList: 'React 19, Next.js 16, TypeScript, Tailwind CSS v4, Framer Motion, Shadcn UI',
     cvSkillsEngine: 'Backend',
-    cvSkillsEngineList: 'Node.js, FastAPI, Python, REST APIs, PostgreSQL, Redis',
+    cvSkillsEngineList: 'FastAPI, Pydantic, SQLAlchemy, PostgreSQL, Redis, GraphQL, Shopify API',
     cvSkillsTools: 'Outils',
-    cvSkillsToolsList: 'Git, VS Code, Docker, Vercel, Postman',
+    cvSkillsToolsList: 'Vercel, Docker, GitHub Actions, Vitest, Pytest, Postman',
     cvSkillsOther: 'Autres',
-    cvSkillsOtherList: 'Architecture logicielle, automatisation, CI/CD, responsive design',
+    cvSkillsOtherList: 'IA Autonome (Gemini Pro), Web Scraping, WebSockets, Stripe, Analyse de Données',
     cvSkillsSpokenLanguages: 'Langues',
     cvSkillsSpokenLanguagesList: 'Anglais technique (lu, écrit, parlé)',
 
     // CV Projects
     cvProjectsTitle: 'Projets',
     cvProject1Title: 'SneakerScope',
-    cvProject1Tech: 'FastAPI • Next.js • PostgreSQL • Redis • Stripe',
+    cvProject1Tech: 'Next.js 16 • FastAPI • PostgreSQL • Redis • Gemini Pro • Stripe',
     cvProject1Desc:
-      'Plateforme analytique avancée pour le marché des sneakers. utilise le Heat Score™ (données financières + sentiment social) et un conseiller IA autonome pour des analyses prédictives et rapports en temps réel.',
-    cvProject1Status: 'En cours',
+      'SneakerScope est une plateforme analytique avancée utilisant l\'IA pour évaluer la rentabilité des sneakers. Algorithme Heat Score™ exclusif, conseiller IA autonome et rapports de marché en temps réel.',
+    cvProject1Status: 'Terminé',
     cvProject2Title: 'Lumière de Soso Shop',
     cvProject2Tech: 'Next.js 16 • Shopify • GraphQL • Tailwind CSS v4',
     cvProject2Desc:
@@ -266,23 +266,23 @@ export const texts = {
     // CV Skills
     cvSkillsTitle: 'Skills & Expertise',
     cvSkillsLanguages: 'Frontend',
-    cvSkillsLanguagesList: 'React, Next.js, TypeScript, Tailwind CSS, Framer Motion',
+    cvSkillsLanguagesList: 'React 19, Next.js 16, TypeScript, Tailwind CSS v4, Framer Motion, Shadcn UI',
     cvSkillsEngine: 'Backend',
-    cvSkillsEngineList: 'Node.js, FastAPI, Python, REST APIs, PostgreSQL, Redis',
+    cvSkillsEngineList: 'FastAPI, Pydantic, SQLAlchemy, PostgreSQL, Redis, GraphQL, Shopify API',
     cvSkillsTools: 'Tools',
-    cvSkillsToolsList: 'Git, VS Code, Docker, Vercel, Postman',
+    cvSkillsToolsList: 'Vercel, Docker, GitHub Actions, Vitest, Pytest, Postman',
     cvSkillsOther: 'Other',
-    cvSkillsOtherList: 'Software architecture, automation, CI/CD, responsive design',
+    cvSkillsOtherList: 'Autonomous AI (Gemini Pro), Web Scraping, WebSockets, Stripe, Data Analysis',
     cvSkillsSpokenLanguages: 'Languages',
     cvSkillsSpokenLanguagesList: 'Technical English (reading, writing, speaking)',
 
     // CV Projects
     cvProjectsTitle: 'Projects',
     cvProject1Title: 'SneakerScope',
-    cvProject1Tech: 'FastAPI • Next.js • PostgreSQL • Redis • Stripe',
+    cvProject1Tech: 'Next.js 16 • FastAPI • PostgreSQL • Redis • Gemini Pro • Stripe',
     cvProject1Desc:
-      'High-performance market analytics platform for sneakers. Features the Heat Score™ algorithm and an AI-powered market advisor with real-time web search capabilities and predictive analytics.',
-    cvProject1Status: 'In Progress',
+      'Advanced market analytics platform for sneakers. Features the Heat Score™ algorithm, an autonomous AI market advisor, and real-time market reporting.',
+    cvProject1Status: 'Completed',
     cvProject2Title: 'Lumière de Soso Shop',
     cvProject2Tech: 'Next.js 16 • Shopify • GraphQL • Tailwind CSS v4',
     cvProject2Desc:

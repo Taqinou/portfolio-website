@@ -60,7 +60,7 @@ export const projects: Project[] = [
     descriptionKey: 'projectSneakerscopeDesc',
     image: '/img/projects/sneaker-scope.svg',
     visit: 'https://sneakerscope.app',
-    status: 'in-progress',
+    status: 'completed',
   },
   {
     slug: 'portfolio-web',

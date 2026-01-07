@@ -158,12 +158,12 @@ export default function CVPrintPage() {
   const skills = [
     {
       title: t.cvSkillsLanguages,
-      items: 'React, Next.js, TypeScript, Tailwind CSS, Framer Motion',
+      items: 'React 19, Next.js 16, TypeScript, Tailwind CSS v4, Framer Motion, Shadcn UI',
     },
-    { title: t.cvSkillsEngine, items: 'Node.js, FastAPI, Python, REST APIs, PostgreSQL, Redis' },
-    { title: t.cvSkillsTools, items: 'Git, VS Code, Docker, Vercel, Postman, Render' },
-    { title: t.cvSkillsOther, items: 'Architecture, CI/CD, Responsive Design' },
-    { title: t.cvSkillsSpokenLanguages, items: 'Anglais technique' },
+    { title: t.cvSkillsEngine, items: 'FastAPI, Pydantic, SQLAlchemy, PostgreSQL, Redis, GraphQL, Shopify API' },
+    { title: t.cvSkillsTools, items: 'Vercel, Docker, GitHub Actions, Vitest, Pytest, Postman' },
+    { title: t.cvSkillsOther, items: lang === 'fr' ? 'IA Autonome, Web Scraping, WebSockets, Stripe, Analyse de Données' : 'Autonomous AI, Web Scraping, WebSockets, Stripe, Data Analysis' },
+    { title: t.cvSkillsSpokenLanguages, items: lang === 'fr' ? 'Anglais technique' : 'Technical English' },
   ];
 
   const education = [
@@ -201,31 +201,7 @@ export default function CVPrintPage() {
         boxSizing: 'border-box',
       }}
     >
-      {/* Background gradient orbs */}
-      <div
-        style={{
-          position: 'absolute',
-          top: '-50px',
-          left: '15%',
-          width: '300px',
-          height: '300px',
-          background: 'radial-gradient(circle, rgba(148, 163, 184, 0.1) 0%, transparent 70%)',
-          borderRadius: '50%',
-          pointerEvents: 'none',
-        }}
-      />
-      <div
-        style={{
-          position: 'absolute',
-          bottom: '0',
-          right: '5%',
-          width: '280px',
-          height: '280px',
-          background: 'radial-gradient(circle, rgba(167, 139, 250, 0.08) 0%, transparent 70%)',
-          borderRadius: '50%',
-          pointerEvents: 'none',
-        }}
-      />
+      {/* No background orbs for print to avoid PDF rendering issues */}
 
       {/* Header */}
       <header
@@ -393,55 +369,56 @@ export default function CVPrintPage() {
             <h2 style={sectionTitleStyle}>
               <IconRocket /> {t.cvProjectsTitle}
             </h2>
-            <div
-              style={{
-                padding: '4mm',
-                background:
-                  'linear-gradient(135deg, rgba(148, 163, 184, 0.06) 0%, rgba(167, 139, 250, 0.04) 100%)',
-                borderRadius: '3mm',
-                border: '1px solid rgba(148, 163, 184, 0.15)',
-              }}
-            >
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '3mm' }}>
+              {/* Project 1 */}
               <div
-                style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}
+                style={{
+                  padding: '3mm',
+                  background: 'rgba(255, 255, 255, 0.03)',
+                  borderRadius: '2.5mm',
+                  border: '1px solid rgba(255, 255, 255, 0.1)',
+                }}
               >
-                <strong style={{ fontSize: '10pt', color: 'rgb(255, 255, 255)' }}>
-                  {t.cvProject1Title}
-                </strong>
-                <span
-                  style={{
-                    fontSize: '6.5pt',
-                    color: 'rgb(148, 163, 184)',
-                    padding: '1mm 2.5mm',
-                    background: 'rgba(148, 163, 184, 0.12)',
-                    border: '1px solid rgba(148, 163, 184, 0.25)',
-                    borderRadius: '2mm',
-                    fontWeight: '500',
-                  }}
-                >
-                  {t.cvProject1Status}
-                </span>
+                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                  <strong style={{ fontSize: '9pt', color: 'rgb(255, 255, 255)' }}>
+                    {t.cvProject1Title}
+                  </strong>
+                  <span style={{ fontSize: '6pt', color: 'rgb(163, 163, 163)', padding: '0.5mm 2mm', background: 'rgba(255, 255, 255, 0.05)', border: '1px solid rgba(255, 255, 255, 0.1)', borderRadius: '1.5mm' }}>
+                    {t.cvProject1Status}
+                  </span>
+                </div>
+                <p style={{ margin: '1mm 0', fontSize: '6pt', color: 'rgb(102, 102, 102)', fontFamily: 'monospace' }}>
+                  {t.cvProject1Tech}
+                </p>
+                <p style={{ margin: 0, fontSize: '7pt', color: 'rgb(163, 163, 163)', lineHeight: '1.35' }}>
+                  {t.cvProject1Desc}
+                </p>
               </div>
-              <p
+
+              {/* Project 2 */}
+              <div
                 style={{
-                  margin: '1.5mm 0',
-                  fontSize: '6.5pt',
-                  color: 'rgb(115, 115, 115)',
-                  fontFamily: 'monospace',
+                  padding: '3mm',
+                  background: 'rgba(255, 255, 255, 0.03)',
+                  borderRadius: '2.5mm',
+                  border: '1px solid rgba(255, 255, 255, 0.1)',
                 }}
               >
-                {t.cvProject1Tech}
-              </p>
-              <p
-                style={{
-                  margin: 0,
-                  fontSize: '7.5pt',
-                  color: 'rgb(163, 163, 163)',
-                  lineHeight: '1.4',
-                }}
-              >
-                {t.cvProject1Desc}
-              </p>
+                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                  <strong style={{ fontSize: '9pt', color: 'rgb(255, 255, 255)' }}>
+                    {t.cvProject2Title}
+                  </strong>
+                  <span style={{ fontSize: '6pt', color: 'rgb(163, 163, 163)', padding: '0.5mm 2mm', background: 'rgba(255, 255, 255, 0.05)', border: '1px solid rgba(255, 255, 255, 0.1)', borderRadius: '1.5mm' }}>
+                    {t.cvProject2Status}
+                  </span>
+                </div>
+                <p style={{ margin: '1mm 0', fontSize: '6pt', color: 'rgb(102, 102, 102)', fontFamily: 'monospace' }}>
+                  {t.cvProject2Tech}
+                </p>
+                <p style={{ margin: 0, fontSize: '7pt', color: 'rgb(163, 163, 163)', lineHeight: '1.35' }}>
+                  {t.cvProject2Desc}
+                </p>
+              </div>
             </div>
           </div>
 
@@ -545,6 +522,6 @@ const timelineDotStyle: React.CSSProperties = {
   width: '6px',
   height: '6px',
   borderRadius: '50%',
-  background: 'rgb(148, 163, 184)',
-  boxShadow: '0 0 6px rgba(148, 163, 184, 0.5)',
+  background: 'rgb(255, 255, 255)',
+  boxShadow: '0 0 4px rgba(255, 255, 255, 0.3)',
 };

@@ -134,28 +134,34 @@ export default function CVPage() {
     {
       icon: Code2,
       title: t.cvSkillsLanguages,
-      items: ['React', 'Next.js', 'TypeScript', 'Tailwind CSS', 'Framer Motion'],
+      items: ['React 19', 'Next.js 16', 'TypeScript', 'Tailwind CSS v4', 'Framer Motion', 'Shadcn UI'],
       level: 90,
     },
     {
       icon: Terminal,
       title: t.cvSkillsEngine,
-      items: ['Node.js', 'FastAPI', 'Python', 'REST APIs', 'PostgreSQL', 'Redis'],
+      items: ['FastAPI', 'Pydantic', 'SQLAlchemy', 'PostgreSQL', 'Redis', 'GraphQL', 'Shopify API'],
       level: 85,
     },
     {
       icon: Wrench,
       title: t.cvSkillsTools,
-      items: ['Git', 'VS Code', 'Docker', 'Vercel', 'Postman', 'Render'],
+      items: ['Vercel', 'Docker', 'GitHub Actions', 'Vitest', 'Pytest', 'Postman'],
       level: 80,
     },
     {
       icon: Sparkles,
       title: t.cvSkillsOther,
-      items: ['Architecture', 'CI/CD', 'Responsive'],
+      items: [
+        lang === 'fr' ? 'IA Autonome' : 'Autonomous AI',
+        'Web Scraping',
+        'WebSockets',
+        'Stripe',
+        lang === 'fr' ? 'Analyse de Données' : 'Data Analysis',
+      ],
       level: 75,
     },
-    { icon: Globe, title: t.cvSkillsSpokenLanguages, items: ['Anglais technique'], level: 70 },
+    { icon: Globe, title: t.cvSkillsSpokenLanguages, items: [lang === 'fr' ? 'Anglais technique' : 'Technical English'], level: 70 },
   ];
 
   const experiences = [
@@ -181,6 +187,12 @@ export default function CVPage() {
       tech: t.cvProject1Tech,
       desc: t.cvProject1Desc,
       status: t.cvProject1Status,
+    },
+    {
+      title: t.cvProject2Title,
+      tech: t.cvProject2Tech,
+      desc: t.cvProject2Desc,
+      status: t.cvProject2Status,
     },
   ];
 
@@ -240,9 +252,29 @@ export default function CVPage() {
         transition={{ delay: 0.3 }}
         className="fixed top-6 right-30 z-50 no-print"
       >
-        <a
-          href="/CV_GAZZOLI_Enzo.pdf"
-          download="CV_GAZZOLI_Enzo.pdf"
+        <button
+          onClick={() => {
+            // Create hidden iframe
+            const iframe = document.createElement('iframe');
+            iframe.style.position = 'absolute';
+            iframe.style.width = '0';
+            iframe.style.height = '0';
+            iframe.style.border = 'none';
+            iframe.style.left = '-9999px';
+            iframe.src = '/cv/print';
+            document.body.appendChild(iframe);
+
+            // Wait for iframe to load then print
+            iframe.onload = () => {
+              setTimeout(() => {
+                iframe.contentWindow?.print();
+                // Remove iframe after print dialog closes
+                setTimeout(() => {
+                  document.body.removeChild(iframe);
+                }, 1000);
+              }, 500);
+            };
+          }}
           className="group flex items-center gap-2 px-4 py-2 bg-white/[0.03] backdrop-blur-xl border border-white/[0.08] rounded-full hover:bg-white/[0.08] hover:border-white/[0.15] transition-all duration-300"
         >
           <Download
@@ -252,7 +284,7 @@ export default function CVPage() {
           <span className="text-sm text-neutral-400 group-hover:text-white transition-colors font-medium">
             {t.cvDownloadPdf}
           </span>
-        </a>
+        </button>
       </motion.div>
 
       {/* Main content */}
