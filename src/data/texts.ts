@@ -51,9 +51,6 @@ export const texts = {
     finished: 'Terminé',
     inProgress: 'En Cours',
 
-    // Footer
-    builtWith: 'Construit avec Next.js',
-
     // Projects
     projectLumiereSosoTitle: 'Lumière de Soso Shop',
     projectSneakerscopeTitle: 'SneakerScope',
@@ -207,9 +204,6 @@ export const texts = {
     visitSite: 'Visit Site',
     finished: 'Finished',
     inProgress: 'In Progress',
-
-    // Footer
-    builtWith: 'Built with Next.js',
 
     // Projects
     projectLumiereSosoTitle: 'Lumière de Soso Shop',

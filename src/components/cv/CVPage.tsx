@@ -190,7 +190,7 @@ export default function CVPage() {
       <div
         className="pointer-events-none fixed inset-0 z-30 transition-none"
         style={{
-          background: `radial-gradient(500px circle at ${mousePosition.x}px ${mousePosition.y}px, rgba(99, 102, 241, 0.06), transparent 40%)`,
+          background: `radial-gradient(500px circle at ${mousePosition.x}px ${mousePosition.y}px, rgba(255, 255, 255, 0.08), transparent 40%)`,
           willChange: 'background',
         }}
       />
@@ -198,8 +198,8 @@ export default function CVPage() {
       {/* Background effects */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         {/* Static gradient orbs (no animation for performance) */}
-        <div className="absolute top-0 left-1/4 w-[600px] h-[600px] bg-blue-500/10 rounded-full blur-[120px]" />
-        <div className="absolute bottom-0 right-1/4 w-[600px] h-[600px] bg-purple-500/10 rounded-full blur-[120px]" />
+        <div className="absolute top-0 left-1/4 w-[600px] h-[600px] bg-white/10 rounded-full blur-[120px]" />
+        <div className="absolute bottom-0 right-1/4 w-[600px] h-[600px] bg-neutral-500/10 rounded-full blur-[120px]" />
 
         {/* Grid pattern */}
         <div
@@ -240,39 +240,19 @@ export default function CVPage() {
         transition={{ delay: 0.3 }}
         className="fixed top-6 right-30 z-50 no-print"
       >
-        <button
-          onClick={() => {
-            // Create hidden iframe
-            const iframe = document.createElement('iframe');
-            iframe.style.position = 'absolute';
-            iframe.style.width = '0';
-            iframe.style.height = '0';
-            iframe.style.border = 'none';
-            iframe.style.left = '-9999px';
-            iframe.src = '/cv/print';
-            document.body.appendChild(iframe);
-
-            // Wait for iframe to load then print
-            iframe.onload = () => {
-              setTimeout(() => {
-                iframe.contentWindow?.print();
-                // Remove iframe after print dialog closes
-                setTimeout(() => {
-                  document.body.removeChild(iframe);
-                }, 1000);
-              }, 500);
-            };
-          }}
-          className="group flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-blue-500/20 to-purple-500/20 backdrop-blur-xl border border-blue-500/30 rounded-full hover:from-blue-500/30 hover:to-purple-500/30 hover:border-blue-500/50 transition-all duration-300"
+        <a
+          href="/CV_GAZZOLI_Enzo.pdf"
+          download="CV_GAZZOLI_Enzo.pdf"
+          className="group flex items-center gap-2 px-4 py-2 bg-white/[0.03] backdrop-blur-xl border border-white/[0.08] rounded-full hover:bg-white/[0.08] hover:border-white/[0.15] transition-all duration-300"
         >
           <Download
             size={16}
-            className="text-blue-400 group-hover:text-blue-300 transition-colors"
+            className="text-neutral-400 group-hover:text-white transition-colors"
           />
-          <span className="text-sm text-blue-300 group-hover:text-white transition-colors font-medium">
+          <span className="text-sm text-neutral-400 group-hover:text-white transition-colors font-medium">
             {t.cvDownloadPdf}
           </span>
-        </button>
+        </a>
       </motion.div>
 
       {/* Main content */}
@@ -295,7 +275,7 @@ export default function CVPage() {
             <span className="text-white">GAZZOLI</span>
             <br />
             {/* ===== TEXT SCRAMBLE EFFECT ===== */}
-            <span className="bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent animate-gradient-x font-mono">
+            <span className="bg-gradient-to-r from-neutral-300 via-white to-neutral-500 bg-clip-text text-transparent animate-gradient-x font-mono">
               {scrambledName}
             </span>
           </h1>
@@ -388,10 +368,10 @@ export default function CVPage() {
                       className="group/project p-4 -m-2 rounded-xl hover:bg-white/[0.02] transition-colors"
                     >
                       <div className="flex items-center justify-between mb-2">
-                        <h4 className="text-lg font-medium text-white group-hover/project:text-blue-300 transition-colors">
+                        <h4 className="text-lg font-medium text-white group-hover/project:text-white transition-colors">
                           {project.title}
                         </h4>
-                        <span className="px-2 py-0.5 text-xs bg-gradient-to-r from-blue-500/20 to-purple-500/20 text-blue-300 rounded-full border border-blue-500/30">
+                        <span className="px-2 py-0.5 text-xs bg-white/10 text-white rounded-full border border-white/20">
                           {project.status}
                         </span>
                       </div>
@@ -516,7 +496,7 @@ function AnimatedSkillBar({
         <div className="flex items-center gap-2">
           <Icon
             size={14}
-            className="text-neutral-500 group-hover/skill:text-blue-400 transition-colors"
+            className="text-neutral-500 group-hover/skill:text-white transition-colors"
           />
           <span className="text-sm font-medium text-neutral-300">{title}</span>
         </div>
@@ -526,7 +506,7 @@ function AnimatedSkillBar({
       {/* Progress bar */}
       <div className="h-1.5 bg-white/[0.05] rounded-full overflow-hidden mb-2">
         <motion.div
-          className="h-full rounded-full bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500"
+          className="h-full rounded-full bg-gradient-to-r from-neutral-400 via-neutral-100 to-neutral-500"
           initial={{ width: 0 }}
           animate={isInView ? { width: `${level}%` } : { width: 0 }}
           transition={{ duration: 1, delay: delay + 0.3, ease: [0.25, 0.46, 0.45, 0.94] }}
@@ -617,7 +597,7 @@ function InterestItem({
       <div className="p-2 rounded-lg bg-white/[0.03] border border-white/[0.06] h-fit">
         <Icon
           size={14}
-          className="text-neutral-500 group-hover/interest:text-purple-400 transition-colors"
+          className="text-neutral-500 group-hover/interest:text-white transition-colors"
         />
       </div>
       <div>
@@ -650,13 +630,13 @@ function TimelineItem({
       )}
 
       {/* Timeline dot */}
-      <div className="absolute left-0 top-1.5 w-[15px] h-[15px] rounded-full border-2 border-neutral-700 bg-black group-hover/timeline:border-blue-500/50 group-hover/timeline:shadow-[0_0_15px_rgba(59,130,246,0.4)] transition-all duration-300">
-        <div className="absolute inset-1 rounded-full bg-neutral-700 group-hover/timeline:bg-blue-500 transition-colors" />
+      <div className="absolute left-0 top-1.5 w-[15px] h-[15px] rounded-full border-2 border-neutral-700 bg-black group-hover/timeline:border-white/50 group-hover/timeline:shadow-[0_0_15px_rgba(255,255,255,0.2)] transition-all duration-300">
+        <div className="absolute inset-1 rounded-full bg-neutral-700 group-hover/timeline:bg-white transition-colors" />
       </div>
 
       {/* Content */}
       <div className="pb-2">
-        <h4 className="text-base font-medium text-white mb-1 group-hover/timeline:text-blue-300 transition-colors">
+        <h4 className="text-base font-medium text-white mb-1 group-hover/timeline:text-white transition-colors">
           {title}
         </h4>
         <p className="text-sm text-neutral-400 mb-1">{subtitle}</p>

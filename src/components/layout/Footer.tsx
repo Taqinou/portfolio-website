@@ -14,9 +14,6 @@ export default function Footer() {
           <p className="text-sm text-neutral-600 font-light">
             © {new Date().getFullYear()} GAZZOLI Enzo
           </p>
-          <p className="text-xs text-neutral-700 font-light">
-            {t.builtWith}
-          </p>
         </div>
       </div>
     </footer>
