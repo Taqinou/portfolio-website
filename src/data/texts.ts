@@ -55,9 +55,12 @@ export const texts = {
     builtWith: 'Construit avec Next.js',
 
     // Projects
+    projectLumiereSosoTitle: 'Lumière de Soso Shop',
     projectSneakerscopeTitle: 'SneakerScope',
     projectSneakerscopeDesc:
-      'Plateforme d\'analyse de marché sneakers propulsée par l\'IA. Agrège des données en temps réel depuis plusieurs sources, génère un "Heat Score" unique combinant momentum financier (60%) et sentiment social (40%), et fournit des signaux de trading via Gemini AI. Inclut: portfolios utilisateurs, alertes de prix, abonnements Stripe, graphiques interactifs.',
+      'SneakerScope est une plateforme analytique avancée dédiée au marché des sneakers. Elle utilise un algorithme propriétaire, le Heat Score™, pour évaluer la rentabilité des modèles en combinant données financières, sentiment social et volatilité. La plateforme intègre un conseiller IA autonome capable de naviguer sur le web pour fournir des rapports de marché en temps réel et des analyses prédictives.',
+    projectLumiereSosoDesc:
+      'Boutique e-commerce moderne conçue pour offrir une expérience d\'achat immersive et spirituelle. Développée selon une architecture headless, elle sépare totalement l\'interface utilisateur (Next.js 16) de la gestion commerciale (Shopify). L\'application exploite React 19 et les Server Components pour des performances exceptionnelles et un SEO optimal.',
     projectPortfolioDesc:
       'Un portfolio moderne et interactif construit avec Next.js et React, avec une interface responsive. Présentant mes projets. Intégré avec Tailwind CSS et PostCSS pour le style, TypeScript pour la robustesse du code, Framer Motion pour des animations fluides, Radix UI pour des composants accessibles, Lucide React pour les icônes, clsx pour les classes utilitaires, Resend pour la fonctionnalité email, et ESLint pour la qualité du code.',
     projectApartmentDesc:
@@ -128,8 +131,13 @@ export const texts = {
     cvProject1Title: 'SneakerScope',
     cvProject1Tech: 'FastAPI • Next.js • PostgreSQL • Redis • Stripe',
     cvProject1Desc:
-      'Plateforme d\'analyse de marché sneakers avec IA. Agrège des données en temps réel, génère un "Heat Score" combinant momentum financier et sentiment social, et fournit des signaux de trading (BUY/SELL/HOLD) via Gemini AI.',
+      'Plateforme analytique avancée pour le marché des sneakers. utilise le Heat Score™ (données financières + sentiment social) et un conseiller IA autonome pour des analyses prédictives et rapports en temps réel.',
     cvProject1Status: 'En cours',
+    cvProject2Title: 'Lumière de Soso Shop',
+    cvProject2Tech: 'Next.js 16 • Shopify • GraphQL • Tailwind CSS v4',
+    cvProject2Desc:
+      'Boutique e-commerce headless haute performance. Architecture moderne avec React 19 Server Components, synchronisation Judge.me et design premium avec Framer Motion.',
+    cvProject2Status: 'Terminé',
 
     // CV Interests
     cvInterestsTitle: 'Intérêts et Loisirs',
@@ -204,9 +212,12 @@ export const texts = {
     builtWith: 'Built with Next.js',
 
     // Projects
+    projectLumiereSosoTitle: 'Lumière de Soso Shop',
     projectSneakerscopeTitle: 'SneakerScope',
     projectSneakerscopeDesc:
-      'AI-powered sneaker market analytics platform. Aggregates real-time data from multiple sources, generates a unique "Heat Score" combining financial momentum (60%) and social sentiment (40%), and provides trading signals via Gemini AI. Features: user portfolios, price alerts, Stripe subscriptions, interactive charts.',
+      'SneakerScope is a high-performance market analytics platform for sneaker enthusiasts and investors. It features the Heat Score™, a proprietary algorithm that synthesizes financial metrics, social sentiment, and price volatility into actionable insights. The project includes an AI-powered market advisor with real-time web search capabilities, interactive financial charting, and a tiered subscription model.',
+    projectLumiereSosoDesc:
+      'High-performance, modern e-commerce platform built for a spiritual and wellness brand. Developed using a headless architecture (Next.js 16 + Shopify), it leverages React 19 and Server Components for lightning-fast load times and a premium shopping experience.',
     projectPortfolioDesc:
       'A modern and interactive portfolio built with Next.js and React, featuring a responsive interface. Showcasing my projects. Integrated with Tailwind CSS and PostCSS for styling, TypeScript for code robustness, Framer Motion for smooth animations, Radix UI for accessible components, Lucide React for icons, clsx for utility classes, Resend for email functionality, and ESLint for code quality.',
     projectApartmentDesc:
@@ -276,8 +287,13 @@ export const texts = {
     cvProject1Title: 'SneakerScope',
     cvProject1Tech: 'FastAPI • Next.js • PostgreSQL • Redis • Stripe',
     cvProject1Desc:
-      'AI-powered sneaker market analytics platform. Aggregates real-time data, generates a "Heat Score" combining financial momentum and social sentiment, and provides trading signals (BUY/SELL/HOLD) via Gemini AI.',
+      'High-performance market analytics platform for sneakers. Features the Heat Score™ algorithm and an AI-powered market advisor with real-time web search capabilities and predictive analytics.',
     cvProject1Status: 'In Progress',
+    cvProject2Title: 'Lumière de Soso Shop',
+    cvProject2Tech: 'Next.js 16 • Shopify • GraphQL • Tailwind CSS v4',
+    cvProject2Desc:
+      'High-performance headless e-commerce store. Modern architecture using React 19 Server Components, Judge.me integration, and premium design with Framer Motion.',
+    cvProject2Status: 'Completed',
 
     // CV Interests
     cvInterestsTitle: 'Interests & Hobbies',

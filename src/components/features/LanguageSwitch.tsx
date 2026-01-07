@@ -21,21 +21,19 @@ export default function LanguageSwitch() {
         <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
           <div className="absolute inset-0 bg-gradient-to-br from-white/[0.08] via-transparent to-transparent" />
         </div>
-        
+
         <div className="relative z-10 flex items-center gap-2">
-          <span className={`text-sm font-medium transition-all duration-300 ${
-            lang === 'fr' 
-              ? 'text-white drop-shadow-[0_0_8px_rgba(59,130,246,0.5)]' 
-              : 'text-neutral-500'
-          }`}>
+          <span className={`text-sm font-medium transition-all duration-300 ${lang === 'fr'
+            ? 'text-white drop-shadow-[0_0_8px_rgba(255,255,255,0.4)]'
+            : 'text-neutral-500'
+            }`}>
             FR
           </span>
           <div className="w-px h-4 bg-neutral-700" />
-          <span className={`text-sm font-medium transition-all duration-300 ${
-            lang === 'en' 
-              ? 'text-white drop-shadow-[0_0_8px_rgba(239,68,68,0.5)]' 
-              : 'text-neutral-500'
-          }`}>
+          <span className={`text-sm font-medium transition-all duration-300 ${lang === 'en'
+            ? 'text-white drop-shadow-[0_0_8px_rgba(255,255,255,0.4)]'
+            : 'text-neutral-500'
+            }`}>
             EN
           </span>
         </div>

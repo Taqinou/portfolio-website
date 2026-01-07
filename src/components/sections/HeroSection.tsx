@@ -14,6 +14,7 @@ export default function HeroSection() {
       <div className="max-w-7xl mx-auto w-full py-32">
         <div className="grid md:grid-cols-2 gap-16 items-center">
           <motion.div
+            key={lang}
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: 'easeOut' }}
@@ -41,7 +42,7 @@ export default function HeroSection() {
               className="text-6xl md:text-8xl font-semibold mb-8 leading-[0.95] tracking-tight"
             >
               {t.hiIm}{' '}
-              <span className="bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent animate-gradient-x">
+              <span className="bg-gradient-to-r from-neutral-300 via-white to-neutral-500 bg-clip-text text-transparent animate-gradient-x">
                 Enzo
               </span>
             </motion.h1>

@@ -36,22 +36,22 @@ export default function ProjectCard({
         <div className="relative aspect-[4/3] overflow-hidden">
           {project.image ? (
             <>
-              <Image 
-                src={project.image} 
-                alt={project.title} 
-                fill 
-                className="object-cover transition-transform duration-500 group-hover:scale-105" 
+              <Image
+                src={project.image}
+                alt={project.title}
+                fill
+                className="object-cover transition-transform duration-500 group-hover:scale-105"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
             </>
           ) : (
             <div className="w-full h-full bg-gradient-to-br from-neutral-900 to-black" />
           )}
-          
+
           {/* Type badge with glass effect */}
           {project.type && (
             <div className="absolute top-4 left-4 z-10">
-              <span className="px-3 py-1.5 bg-white/[0.08] backdrop-blur-md text-white text-xs font-medium uppercase tracking-wider rounded-full border border-white/[0.12] shadow-lg">
+              <span className="px-3 py-1.5 bg-black/20 backdrop-blur-xl text-white text-xs font-medium uppercase tracking-wider rounded-full border border-white/20 shadow-[0_8px_32px_0_rgba(0,0,0,0.3)] ring-1 ring-white/10">
                 {project.type}
               </span>
             </div>
@@ -60,7 +60,7 @@ export default function ProjectCard({
 
         {/* Content section */}
         <div className="p-6 space-y-3">
-          <h3 className="text-xl font-semibold text-white group-hover:bg-gradient-to-r group-hover:from-blue-400 group-hover:via-purple-400 group-hover:to-pink-400 group-hover:bg-clip-text group-hover:text-transparent transition-all duration-300 line-clamp-2 min-h-[4rem]">
+          <h3 className="text-xl font-semibold text-white group-hover:bg-gradient-to-r group-hover:from-white group-hover:via-neutral-200 group-hover:to-neutral-400 group-hover:bg-clip-text group-hover:text-transparent transition-all duration-300 line-clamp-2 min-h-[4rem]">
             {project.titleKey ? t[project.titleKey as keyof typeof t] : project.title}
           </h3>
 
